@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación Técnica Entrópica</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Netlify Identity Widget para autenticación -->
+    <!--
+
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    -->
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header Superior -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="app-title">📚 Documentación Entropic</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="auth-button" class="auth-btn">Login</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Sidebar Izquierdo -->
+            <aside class="sidebar">
+                <nav class="nav-menu">
+                    <div class="nav-section">
+                        <h3 class="nav-section-title">Contenido</h3>
+                        <ul class="nav-list">
+                            <li>
+                                <a href="#encabezado" class="nav-link" data-section="encabezado">
+                                    <span class="nav-icon"></span>
+                                    Inicio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#resumen" class="nav-link" data-section="resumen">
+                                    <span class="nav-icon"></span>
+                                    Resumen
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#introduccion" class="nav-link" data-section="introduccion">
+                                    <span class="nav-icon"></span>
+                                    Introducción
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#metodologia" class="nav-link" data-section="metodologia">
+                                    <span class="nav-icon">🔧</span>
+                                    Metodología
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#cadena-valor" class="nav-link" data-section="cadena-valor">
+                                    <span class="nav-icon">⛓️</span>
+                                    Cadena de Valor
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#jerarquia" class="nav-link" data-section="jerarquia">
+                                    <span class="nav-icon">🏗️</span>
+                                    Jerarquía de Procesos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#flujo-trabajo" class="nav-link" data-section="flujo-trabajo">
+                                    <span class="nav-icon">📊</span>
+                                    Flujo de Trabajo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#descripcion-procesos" class="nav-link" data-section="descripcion-procesos">
+                                    <span class="nav-icon">📝</span>
+                                    Descripción de Procesos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#actividades" class="nav-link" data-section="actividades">
+                                    <span class="nav-icon">✅</span>
+                                    Flujo de Actividades
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Contenido Principal -->
+            <main class="main-content">
+                <section class="content-section" id="encabezado">
+                    <h1>
+                        Modelado de negocio para la gestión de proyectos fotovoltaicos.
+                    </h1>
+                    <h3>
+                        Caso de estudio: flujo de trabajo estándar para la gestión y diseño de plantas fotovoltaicas.
+                    </h3>
+                    <h3>Mendoza, 20/02/2026</h3>
+                    <h3>Ruiz Ahumada, Gastón Nicolás</h3>
+                    <hr>
+                </section>
+                <section class="content-section" id="resumen">
+                    <h2>Resumen</h2>
+                    <p>El presente documento modela los procesos técnicos mediante los cuales las empresas dedicadas a
+                        la comercialización e instalación de plantas fotovoltaicas realizan el análisis y
+                        dimensionamiento de sus proyectos.</p>
+                    <p>Independientemente de su escala operativa, las organizaciones del sector siguen una secuencia de
+                        procesos orientados a transformar información inicial del cliente en una propuesta técnica
+                        yeconómicamente viable. Si bien la complejidad y especialización varían según el tamaño del
+                        proyecto —desde instalaciones residenciales hasta desarrollos de gran escala— se identifican
+                        actividades comunes que pueden agruparse en procesos estandarizados.</p>
+                    <p>Desde una perspectiva sistémica, dichas actividades se organizan en procesos que generan valor
+                        para la organización. Cada proceso integra un conjunto de actividades o subprocesos que pueden
+                        escalar en función de la magnitud del proyecto. En proyectos de menor escala, varias actividades
+                        pueden concentrarse dentro de un mismo proceso. En proyectos de mayor envergadura, esas mismas
+                        actividades se formalizan como procesos diferenciados, con asignación específica de
+                        responsabilidades y mayor grado de especialización</p>
+                    <p>El modelado se realiza mediante una estructura general aplicable a proyectos fotovoltaicos de
+                        cualquier dimensión. Se utiliza la metodología de modelado de negocio con el fin de identificar
+                        procesos, eventos disparadores, entradas de información, recursos requeridos, actores
+                        organizacionales involucrados, objetos de negocio generados y relaciones entre estos. <br>
+                        La viabilidad económica de cada proyecto depende del análisis técnico realizado. En
+                        consecuencia, las actividades vinculadas a la evaluación económica se integran dentro del flujo
+                        de trabajo modelado, dado que forman parte del sistema organizacional que permite a la empresa
+                        presentar propuestas técnica y financieramente viables.</p>
+                </section>
+                <!-- Sección: Introducción -->
+                <section id="introduccion" class="content-section">
+                    <h2>Introducción</h2>
+                    <p>El presente modelado de negocio constituye documentación de apoyo para el relevamiento de
+                        requerimientos asociados al desarrollo de Entropic_pv, aplicación SaaS orientada a la gestión y
+                        diseño de plantas fotovoltaicas.</p>
+                    <p>La formalización del flujo de trabajo y la delimitación de procesos organizacionales permiten
+                        establecer los alcances y límites funcionales del sistema a desarrollar. La identificación
+                        estructurada de procesos y objetos de negocio facilita la posterior definición de
+                        funcionalidades coherentes con la operatoria real del sector.</p>
+                    <p>El análisis se apoya en entrevistas realizadas a representantes técnicos y financieros de dos
+                        empresas del rubro: “Origen” y “Energiú”. El alcance del modelado pretende analizar todos los
+                        procesos del negocio, desde los comerciales y técnicos, hasta la ejecución de obras y las
+                        habilitaciones municipales.</p>
+                    <p>La representación del modelo se realiza mediante notación gráfica y textual. Se utiliza el
+                        Lenguaje Unificado de Modelado (UML) con la extensión UML Business, que permite representar
+                        procesos, entradas, salidas, actores organizacionales, recursos, objetos de negocio y productos
+                        generados. La notación gráfica se complementa con descripciones textuales que explicitan el
+                        contenido de cada elemento modelado.</p>
+
+                    <div class="info-card">
+                        <h3>📦 ¿Qué encontrarás aquí?</h3>
+                        <ul>
+                            <li>Descripción de metodologías implementadas</li>
+                            <li>Análisis de cadena de valor</li>
+                            <li>Jerarquía y estructura de procesos</li>
+                            <li>Flujos de trabajo detallados</li>
+                            <li>Diagramas interactivos</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Sección: Metodología -->
+                <section id="metodologia" class="content-section">
+                    <h2>Metodología aplicada</h2>
+                    <p>
+                        Las actividades del flujo de trabajo se agrupan en procesos diferenciados y delimitados. Cada proceso se caracteriza por:
+                    </p>
+                    <ul>
+                        <li>Un objetivo organizacional específico</li>
+                        <li>Un evento de inicio</li>
+                        <li>Un conjunto de entradas</li>
+                        <li>Una secuencia de actividades internas</li>
+                        <li></li>
+                    </ul>
+                    <p>Las entradas pueden consistir en eventos, información relevante, recursos u objetos de negocio. Las salidas pueden materializarse como productos, información generada o eventos que activan procesos posteriores.</p>
+                    <p>Las actividades orientadas a producir un mismo resultado organizacional se agrupan dentro del mismo proceso.</p>
+                    <p>En el documento se emplean los siguientes tipos de diagramas:</p>
+                    <ol>
+                        <li>Diagrama de cadena de valor</li>
+                        <li>Jerarquía de procesos</li>
+                        <li>Flujos de trabajo</li>
+                        <li>Diagramas de procesos (visón caja negra)</li>
+                        <li>Diagramas de actividades (visión caja blanca)</li>
+                    </ol>
+                    <div class="card-group">
+                        <div class="info-card">
+                            <h3>🔍 Análisis de Procesos</h3>
+                            <p>Evaluación exhaustiva de cada componente del flujo de trabajo para identificar
+                                optimizaciones.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>⚙️ Optimización Contínua</h3>
+                            <p>Mejora iterativa basada en métricas y retroalimentación de usuarios.</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>📈 Escalabilidad</h3>
+                            <p>Diseño modular que permite crecer sin perder rendimiento.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección: Cadena de Valor -->
+                <section id="cadena-valor" class="content-section">
+                    <h2>Cadena de Valor</h2>
+                    <p>La cadena de valor representa la secuencia de procesos que generan valor para la organización. Los procesos principales se disponen de manera secuencial, desde la captación inicial de información hasta la validación técnica y económica del proyecto.</p>
+                    <p>Las actividades de soporte, representadas transversalmente, corresponden a áreas organizacionales que intervienen indirectamente en la generación de valor, tales como ventas, gestión de proyectos y gestión normativa.</p>
+                    
+                    <iframe src="./public/diagramas/cadena-valor.html" class="diagram-frame"></iframe>
+                    <div class="section-description">
+                        <h3>Componentes Principales</h3>
+                        <ol>
+                            <li><strong>Entrada:</strong> Recopilación de requisitos y datos</li>
+                            <li><strong>Procesamiento:</strong> Análisis y transformación de información</li>
+                            <li><strong>Validación:</strong> Control de calidad</li>
+                            <li><strong>Salida:</strong> Entrega de resultados</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <!-- Sección: Jerarquía de Procesos -->
+                <section id="jerarquia" class="content-section">
+                    <h2>Jerarquía de Procesos</h2>
+                    <p>Estructura jerárquica que define la relación y dependencia entre diferentes procesos.</p>
+                    <iframe src="./public/diagramas/jerarquia.html" class="diagram-frame"></iframe>
+                    <div class="section-description">
+                        <h3>Niveles de Procesos</h3>
+                        <div class="info-card">
+                            <h4>Nivel 1: Procesos Estratégicos</h4>
+                            <p>Definición de objetivos y dirección general del negocio.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Nivel 2: Procesos Clave</h4>
+                            <p>Procesos que generan valor directamente para el cliente.</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Nivel 3: Procesos de Soporte</h4>
+                            <p>Procesos que permiten la ejecución de procesos clave.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección: Flujo de Trabajo -->
+                <section id="flujo-trabajo" class="content-section">
+                    <h2>Flujo de Trabajo General</h2>
+                    <p>Diagrama del flujo general de trabajo que muestra cómo se interconectan los diferentes procesos.
+                    </p>
+                    <iframe src="./public/diagramas/flujo-trabajo.html" class="diagram-frame"></iframe>
+                    <div class="section-description">
+                        <h3>Características del Flujo</h3>
+                        <ul>
+                            <li>Ejecución secuencial y paralela donde es posible</li>
+                            <li>Puntos de decisión claramente definidos</li>
+                            <li>Mecanismos de retroalimentación</li>
+                            <li>Control de calidad en cada etapa</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Sección: Descripción de Procesos -->
+                <section id="descripcion-procesos" class="content-section">
+                    <h2>Descripción Detallada de Procesos</h2>
+                    <p>Análisis profundo de cada proceso y su contribución al sistema general.</p>
+                    <div class="process-list">
+                        <div class="process-card">
+                            <h3>Proceso 1: Recopilación de Datos</h3>
+                            <p>Responsable de la obtención e integración de datos de múltiples fuentes.</p>
+                            <div class="process-attributes">
+                                <span class="attribute"><strong>Entrada:</strong> Solicitudes de datos</span>
+                                <span class="attribute"><strong>Salida:</strong> Dataset procesado</span>
+                                <span class="attribute"><strong>Duración:</strong> Variable</span>
+                            </div>
+                        </div>
+                        <div class="process-card">
+                            <h3>Proceso 2: Análisis y Transformación</h3>
+                            <p>Procesamiento y transformación de datos según reglas de negocio.</p>
+                            <div class="process-attributes">
+                                <span class="attribute"><strong>Entrada:</strong> Dataset procesado</span>
+                                <span class="attribute"><strong>Salida:</strong> Datos transformados</span>
+                                <span class="attribute"><strong>Duración:</strong> 2-4 horas</span>
+                            </div>
+                        </div>
+                        <div class="process-card">
+                            <h3>Proceso 3: Validación y QA</h3>
+                            <p>Control de calidad y validación de resultados.</p>
+                            <div class="process-attributes">
+                                <span class="attribute"><strong>Entrada:</strong> Datos transformados</span>
+                                <span class="attribute"><strong>Salida:</strong> Datos validados</span>
+                                <span class="attribute"><strong>Duración:</strong> 1-2 horas</span>
+                            </div>
+                        </div>
+                        <div class="process-card">
+                            <h3>Proceso 4: Entrega</h3>
+                            <p>Distribución de resultados a usuarios finales.</p>
+                            <div class="process-attributes">
+                                <span class="attribute"><strong>Entrada:</strong> Datos validados</span>
+                                <span class="attribute"><strong>Salida:</strong> Reportes generados</span>
+                                <span class="attribute"><strong>Duración:</strong> 30 minutos</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección: Flujo de Actividades -->
+                <section id="actividades" class="content-section">
+                    <h2>Flujo Detallado de Actividades</h2>
+                    <p>Desglose detallado de todas las actividades involucradas en cada proceso.</p>
+                    <iframe src="./public/diagramas/actividades.html" class="diagram-frame"></iframe>
+                    <div class="section-description">
+                        <h3>Matriz de Actividades</h3>
+                        <table class="activity-table">
+                            <thead>
+                                <tr>
+                                    <th>Actividad</th>
+                                    <th>Responsable</th>
+                                    <th>Duración Est.</th>
+                                    <th>Dependencias</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Configurar fuentes</td>
+                                    <td>Team Datos</td>
+                                    <td>2h</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td>Extraer datos</td>
+                                    <td>Extractor</td>
+                                    <td>4h</td>
+                                    <td>Configurar fuentes</td>
+                                </tr>
+                                <tr>
+                                    <td>Transformar</td>
+                                    <td>Team Análisis</td>
+                                    <td>3h</td>
+                                    <td>Extraer datos</td>
+                                </tr>
+                                <tr>
+                                    <td>Validar</td>
+                                    <td>QA Team</td>
+                                    <td>2h</td>
+                                    <td>Transformar</td>
+                                </tr>
+                                <tr>
+                                    <td>Generar reporte</td>
+                                    <td>Team Reportes</td>
+                                    <td>1h</td>
+                                    <td>Validar</td>
+                                </tr>
+                                <tr>
+                                    <td>Entregar</td>
+                                    <td>Team Delivery</td>
+                                    <td>30m</td>
+                                    <td>Generar reporte</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="main-footer">
+                    <p>&copy; 2026 Entrópica. Documentación Técnica. Reservados todos los derechos.</p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="auth.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

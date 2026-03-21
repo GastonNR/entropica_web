@@ -1,0 +1,51 @@
+[build]
+  command = "echo 'Sitio estático. Sin compilación requerida.'"
+  publish = "."
+
+[build.environment]
+  # Variables de entorno para Netlify
+
+[dev]
+  command = "python -m http.server 8888"
+  port = 8888
+
+# Redireccionamientos y reglas de seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Configuración de autenticación
+[context.production]
+  command = "echo 'Sitio de documentación en producción'"
+
+# Redirigir rutas no encontradas al index (para SPA functionality)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Configuración de caché
+[[headers]]
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "max-age=31536000, immutable"
+
+[[headers]]
+  for = "/main.js"
+  [headers.values]
+    Cache-Control = "max-age=31536000, immutable"
+
+[[headers]]
+  for = "/auth.js"
+  [headers.values]
+    Cache-Control = "max-age=3600"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "max-age=3600, must-revalidate"

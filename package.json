@@ -1,0 +1,33 @@
+{
+  "name": "documentacion-entropic",
+  "version": "1.0.0",
+  "description": "Sitio de documentación técnica profesional con autenticación Netlify Identity",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8888",
+    "deploy": "echo 'Usar interfaz de Netlify para deploy'"
+  },
+  "keywords": [
+    "documentación",
+    "técnica",
+    "netlify",
+    "autenticación",
+    "static",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Nicolás Ruiz",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GastonNR/documentacion-entropic"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
