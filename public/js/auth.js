@@ -213,8 +213,8 @@ function initManualLoginForm() {
 function initLoginPage() {
     if (currentPage === LOGIN_PAGE && window.netlifyIdentity) {
         // El widget se inicializa automáticamente en el div con id "netlify-identity-container"
-        window.netlifyIdentity.open('signup');
-        
+        //window.netlifyIdentity.open('signup');
+        window.netlifyIdentity.open('login');
         // Event listener para cuando se cierre sin login
         const checkAuth = setInterval(async () => {
             if (await isUserAuthenticated()) {

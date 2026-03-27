@@ -1,6 +1,6 @@
 [build]
   command = "echo 'Sitio estático. Sin compilación requerida.'"
-  publish = "."
+  publish = "public"
 
 [build.environment]
   # Variables de entorno para Netlify
@@ -26,7 +26,7 @@
 # Redirigir rutas no encontradas al index (para SPA functionality)
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/pages/index.html"
   status = 200
 
 # Configuración de caché
