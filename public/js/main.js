@@ -169,5 +169,5 @@ window.addEventListener('resize', () => {
 // INICIALIZACIÓN
 // ====================================
 
-console.log('✅ Main.js cargado correctamente');
-console.log('📚 Sitio de documentación Entrópica inicializado');
+console.log('Main.js cargado correctamente');
+console.log('Sitio de documentación Entrópica inicializado');

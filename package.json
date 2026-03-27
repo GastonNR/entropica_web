@@ -29,5 +29,8 @@
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "@netlify/identity": "^1.0.0"
   }
 }

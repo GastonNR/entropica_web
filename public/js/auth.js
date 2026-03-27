@@ -27,14 +27,14 @@ function initNetlifyIdentity() {
 
         // Redirigir al dashboard después del login
         window.netlifyIdentity.on('login', (user) => {
-            console.log('✅ Usuario autenticado:', user.email);
+            console.log('Usuario autenticado:', user.email);
             // Redirigir a la página principal
             window.location.href = 'index.html';
         });
 
         // Manejador de errores de autenticación
         window.netlifyIdentity.on('error', (err) => {
-            console.error('❌ Error de autenticación:', err);
+            console.error('Error de autenticación:', err);
         });
 
         return true;
@@ -82,7 +82,7 @@ function getCurrentUser() {
  */
 function redirectToLogin() {
     if (!window.location.href.includes(LOGIN_PAGE)) {
-        console.log('🔒 No autenticado. Redirigiendo a login...');
+        console.log('No autenticado. Redirigiendo a login...');
         window.location.href = LOGIN_PAGE;
     }
 }
@@ -91,7 +91,7 @@ function redirectToLogin() {
  * Redirigir al dashboard si está autenticado (desde login)
  */
 function redirectToDashboard() {
-    console.log('✅ Autenticado. Accediendo al dashboard...');
+    console.log('Autenticado. Accediendo al dashboard...');
     window.location.href = 'index.html';
 }
 
@@ -146,7 +146,7 @@ async function updateAuthButton() {
 
     if (user) {
         const currentUser = getCurrentUser();
-        authButton.textContent = `👤 ${currentUser?.email || 'Cuenta'} (Logout)`;
+        authButton.textContent = `${currentUser?.email || 'Cuenta'} (Logout)`;
         authButton.classList.add('logout');
         authButton.addEventListener('click', logout);
     } else {
@@ -166,7 +166,7 @@ async function updateAuthButton() {
 function logout() {
     if (window.netlifyIdentity) {
         window.netlifyIdentity.logout();
-        console.log('👋 Usuario desconectado');
+        console.log('Usuario desconectado');
     }
 }
 
@@ -253,7 +253,7 @@ function hasPermission(permission) {
 function logUserAccess() {
     const user = getCurrentUser();
     if (user) {
-        console.log(`📊 Acceso de usuario: ${user.email} - Página: ${currentPage} - ${new Date().toLocaleString()}`);
+        console.log(`Acceso de usuario: ${user.email} - Página: ${currentPage} - ${new Date().toLocaleString()}`);
     }
 }
 
@@ -320,13 +320,13 @@ document.addEventListener('DOMContentLoaded', async () => {
  */
 if (window.netlifyIdentity) {
     window.netlifyIdentity.on('login', async () => {
-        console.log('🔄 Detectado login. Actualizando UI...');
+        console.log('Detectado login. Actualizando UI...');
         updateAuthButton();
         logUserAccess();
     });
 
     window.netlifyIdentity.on('logout', async () => {
-        console.log('🔄 Detectado logout. Actualizando UI...');
+        console.log('Detectado logout. Actualizando UI...');
         updateAuthButton();
     });
 }
@@ -344,5 +344,5 @@ window.AuthManager = {
     redirectToLogin: redirectToLogin
 };
 
-console.log('✅ Auth.js cargado correctamente');
-console.log('🔐 Sistema de autenticación listo');
+console.log('Auth.js cargado correctamente');
+console.log('Sistema de autenticación listo');

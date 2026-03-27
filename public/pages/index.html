@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modelado de negocio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <!-- Netlify Identity Widget para autenticación -->
     <!--
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -81,18 +81,18 @@
                                     Descripción de Procesos
                                 </a>
                                 <ol>
-                                    <li><a href="#descripcion-procesos-A" class="nav-link">Captar al cliente</a></li>
-                                    <li><a href="#descripcion-procesos-B" class="nav-link">Recibir la demanda del
+                                    <li><a href="#descripcion-procesos-A" class="nav-link" data-section="descripcion-procesos-A">Captar al cliente</a></li>
+                                    <li><a href="#descripcion-procesos-B" class="nav-link" data-section="descripcion-procesos-B">Recibir la demanda del
                                             proyecto</a></li>
-                                    <li><a href="#descripcion-procesos-C" class="nav-link">Dimensionamiento
+                                    <li><a href="#descripcion-procesos-C" class="nav-link" data-section="descripcion-procesos-C">Dimensionamiento
                                             energético</a></li>
-                                    <li><a href="#descripcion-procesos-D" class="nav-link">Oferta económica al
+                                    <li><a href="#descripcion-procesos-D" class="nav-link" data-section="descripcion-procesos-D">Oferta económica al
                                             cliente</a></li>
-                                    <li><a href="#descripcion-procesos-E" class="nav-link">Diseño técnico detallado</a>
+                                    <li><a href="#descripcion-procesos-E" class="nav-link" data-section="descripcion-procesos-E">Diseño técnico detallado</a>
                                     </li>
-                                    <li><a href="#descripcion-procesos-F" class="nav-link">Cierre comercial</a></li>
-                                    <li><a href="#descripcion-procesos-G" class="nav-link">Instalación</a></li>
-                                    <li><a href="#descripcion-procesos-H" class="nav-link">Habilitación municipal</a>
+                                    <li><a href="#descripcion-procesos-F" class="nav-link" data-section="descripcion-procesos-F">Cierre comercial</a></li>
+                                    <li><a href="#descripcion-procesos-G" class="nav-link" data-section="descripcion-procesos-G">Instalación</a></li>
+                                    <li><a href="#descripcion-procesos-H" class="nav-link" data-section="descripcion-procesos-H">Habilitación municipal</a>
                                     </li>
                                 </ol>
                             </li>
@@ -221,7 +221,7 @@
                         que intervienen indirectamente en la generación de valor, tales como ventas, gestión de
                         proyectos y gestión normativa.</p>
 
-                    <iframe src="./public/diagramas/cadena-valor.html" class="diagram-frame"></iframe>
+                    <iframe src="../assets/diagrams/Cadena de valor de procesos técnicos.drawio.html" class="diagram-frame"></iframe>
                     <div class="section-description">
                         <h3>Componentes Principales</h3>
                         <ol>
@@ -249,7 +249,7 @@
                         subprocesos.</p>
                     <p>(Se mantienen las definiciones originales de los subprocesos D y E, reformuladas bajo criterios
                         descriptivos y terminología consistente.)</p>
-                    <iframe src="./public/diagramas/jerarquia.html" class="diagram-frame"></iframe>
+                    <iframe src="../assets/diagrams/jerarquía de procesos.drawio.html" class="diagram-frame"></iframe>
                     <div class="section-description">
                         <h3>Componentes Principales</h3>
                         <ol>
@@ -322,7 +322,7 @@
                     <p>El diagrama de flujo de trabajo representa la secuencia lógica y las relaciones de dependencia
                         entre procesos y subprocesos. En este nivel se visualizan las entradas y salidas principales,
                         así como las posibles retroalimentaciones entre procesos.</p>
-                    <iframe src="./public/diagramas/Flujo de trabajo.drawio.html" class="diagram-frame"></iframe>
+                    <iframe src="../assets/diagrams/Flujo de trabajo.drawio .html" class="diagram-frame"></iframe>
                     <div class="section-description">
                         <h3>Características del Flujo</h3>
                         <ul>
@@ -369,14 +369,14 @@
                             web, chatbots, google ads, redes sociales y aplicaciones de mensajería.</p>
                         <p>Otro modo de contactar es a través de vendedores freelancers, los cuales se dedican a
                             conseguir clientes y obtienen una comisión por ventas realizadas.</p>
-                        <iframe src="./public/diagramas/diagramas_procesos/Captación del cliente.drawio.html"
+                        <iframe src="../assets/diagrams/diagramas_procesos/Captación del cliente.drawio.html"
                             class="diagram-frame"></iframe>
                     </section>
                     <section id="descripcion-procesos-B" class="content-section">
                         <h3>6.2. Demanda del proyecto B</h3>
                         <p>Proceso inicial en el cual se recopilan los datos generales del cliente y del proyecto. Se
                             releva la información necesaria para establecer la demanda energética preliminar.</p>
-                        <iframe src="./public/diagramas/diagramas_procesos/Demanda del proyecto.drawio.html"
+                        <iframe src="../assets/diagrams/diagramas_procesos/Demanda del proyecto.drawio.html"
                             class="diagram-frame"></iframe>
                     </section>
                     <section id="descripcion-procesos-C" class="content-section">
@@ -384,7 +384,7 @@
                         <p>Procesos técnico principal que abarca varios subprocesos. Su objetivo es dimensionar los
                             equipos, la instalación, y la potencia necesaria para poder satisfacer la demanda del
                             proyecto,</p>
-                        <iframe src="./public/diagramas/diagramas_procesos/Dimensionamiento energético.drawio.html"
+                        <iframe src="../assets/diagrams/diagramas_procesos/Dimensionamiento energético.drawio.html"
                             class="diagram-frame"></iframe>
                         <section id="descripcion-procesos-C.1" class="content-section">
                             <h3>6.3.1 Análisis del recurso solar C.1</h3>
@@ -393,30 +393,30 @@
                                 restricciones estructurales, accesibilidad y distancia al punto de conexión. El
                                 resultado es una estimación de la capacidad de producción energética del sitio y de la
                                 potencia máxima físicamente instalable.</p>
-                            <iframe src="./public/diagramas/diagramas_procesos/Análisis del recurso solar.drawio.html"
+                            <iframe src="../assets/diagrams/diagramas_procesos/Análisis del recurso solar.drawio.html"
                                 class="diagram-frame"></iframe>
                         </section>
                         <section id="descripcion-procesos-C.2" class="content-section">
                             <h3>6.3.2 Cálculo de potencia C.2</h3>
                             <p></p>
-                            <iframe src="./public/diagramas/diagramas_procesos/Cálculo de potencia C.2.drawio.html"
+                            <iframe src="../assets/diagrams/diagramas_procesos/Cálculo de potencia C.2.drawio.html"
                                 class="diagram-frame"></iframe>
                             <section id="descripcion-procesos-C.2.1" class="content-section">
                                 <h3>6.3.2.1 Definición del objetivo energético C.2.1</h3>
                                 <p></p>
-                                <iframe src="./public/diagramas/diagramas_procesos/C.2.1.drawio.html"
+                                <iframe src="../assets/diagrams/diagramas_procesos/C.2.1.drawio.html"
                                     class="diagram-frame"></iframe>
                             </section>
                             <section id="descripcion-procesos-C.2.2" class="content-section">
                                 <h3>6.3.2.2 Cálculo de generación fotovoltaica C.2.2</h3>
                                 <p></p>
-                                <iframe src="./public/diagramas/diagramas_procesos/C.2.2.drawio.html"
+                                <iframe src="../assets/diagrams/diagramas_procesos/C.2.2.drawio.html"
                                     class="diagram-frame"></iframe>
                             </section>
                             <section id="descripcion-procesos-C.2.3" class="content-section">
                                 <h3>6.3.2.3 Dimensionamiento preliminar del almacenamiento C.2.3</h3>
                                 <p></p>
-                                <iframe src="./public/diagramas/diagramas_procesos/C.2.3.drawio.html"
+                                <iframe src="../assets/diagrams/diagramas_procesos/C.2.3.drawio.html"
                                     class="diagram-frame"></iframe>
                             </section>
                         </section>
@@ -424,58 +424,58 @@
                             <h3>6.3.3 Selección de la configuración del sistema</h3>
                             <p></p>
                             <iframe
-                                src="./public/diagramas/diagramas_procesos/Selección de la configuración del sistema.drawio.html"
+                                src="../assets/diagrams/diagramas_procesos/Selección de la configuración del sistema.drawio.html"
                                 frameborder="0" class="diagram-frame"></iframe>
                         </section>
                         <section id="descripcion-procesos-C.4" class="content-section">
                             <h3>6.3.4 Simulación, validación y ajuste</h3>
                             <p></p>
                             <iframe
-                                src="./public/diagramas/diagramas_procesos/Simulación, validación y ajuste.drawio.html"
+                                src="../assets/diagrams/diagramas_procesos/Simulación, validación y ajuste.drawio.html"
                                 frameborder="0" class="diagram-frame"></iframe>
                         </section>
                     </section>
                     <section id="descripcion-procesos-D" class="content-section">
                         <h3>6.4. Oferta económica al cliente</h3>
                         <p></p>
-                        <iframe src="./public/diagramas/diagramas_procesos/Oferta económica al cliente.drawio.html"
+                        <iframe src="../assets/diagrams/diagramas_procesos/Oferta económica al cliente.drawio.html"
                             class="diagram-frame"></iframe>
                         <section id="descripcion-procesos-D.1" class="content-section">
                             <h3>6.4.1 Cotización detallada D.1</h3>
                             <p></p>
-                            <iframe src="./public/diagramas/diagramas_procesos/Cotización detallada D.1.drawio.html"
+                            <iframe src="../assets/diagrams/diagramas_procesos/Cotización detallada D.1.drawio.html"
                                 class="diagram-frame"></iframe>
                         </section>
                         <section id="descripcion-procesos-D.2" class="content-section">
                             <h3>6.4.2 Análisis de viabilidad económica</h3>
                             <p></p>
                             <iframe
-                                src="./public/diagramas/diagramas_procesos/Análisis de viabilidad económica.drawio.html"
+                                src="../assets/diagrams/diagramas_procesos/Análisis de viabilidad económica.drawio.html"
                                 frameborder="0" class="diagram-frame"></iframe>
                         </section>
                     </section>
-                    <section id="descripcion-procesos-F" class="content-section">
+                    <section id="descripcion-procesos-E" class="content-section">
                         <h3>6.5 Diseño detallado del sistema E</h3>
                         <p></p>
-                        <iframe src="./public/diagramas/diagramas_procesos/Diseño detallado.drawio.html"
+                        <iframe src="../assets/diagrams/diagramas_procesos/Diseño detallado.drawio.html"
+                            class="diagram-frame"></iframe>
+                    </section>
+                    <section id="descripcion-procesos-F" class="content-section">
+                        <h3>6.6 Cierre comercial F</h3>
+                        <p></p>
+                        <iframe src="../assets/diagrams/diagramas_procesos/Cierre comercial.drawio.html"
                             class="diagram-frame"></iframe>
                     </section>
                     <section id="descripcion-procesos-G" class="content-section">
-                        <h3>6.6 Cierre comercial F</h3>
+                        <h3>6.7 Instalación G</h3>
                         <p></p>
-                        <iframe src="./public/diagramas/diagramas_procesos/Cierre comercial.drawio.html"
+                        <iframe src="../assets/diagrams/diagramas_procesos/Instalación.drawio.html"
                             class="diagram-frame"></iframe>
                     </section>
                     <section id="descripcion-procesos-H" class="content-section">
-                        <h3>6.7 Instalación H</h3>
+                        <h3>6.8 Habilitación municipal H</h3>
                         <p></p>
-                        <iframe src="./public/diagramas/diagramas_procesos/Instalación.drawio.html"
-                            class="diagram-frame"></iframe>
-                    </section>
-                    <section id="descripcion-procesos-I" class="content-section">
-                        <h3>6.8 Habilitación municipal</h3>
-                        <p></p>
-                        <iframe src="./public/diagramas/diagramas_procesos/Habilitación municipal.drawio.html"
+                        <iframe src="../assets/diagrams/diagramas_procesos/Habilitación municipal.drawio .html"
                             class="diagram-frame"></iframe>
                     </section>
                 </section>
@@ -488,7 +488,7 @@
                         compuesta por actividades que producen objetos de negocio específicos dentro del sistema
                         organizacional orientado a la generación de una propuesta técnica y económicamente viable.</p>
 
-                    <iframe src="./public/diagramas/flujo_de_actividades.drawio.html" class="diagram-frame"></iframe>
+                    <iframe src="../assets/diagrams/flujo_de_actividades.drawio.html" class="diagram-frame"></iframe>
                     <div class="section-description">
                         <h3>7.1 Notación utilizada</h3>
                         <p>Se emplea la notación UML 2.5 para diagramas de actividades.</p>
@@ -531,38 +531,38 @@
                             <h3>7.2.1 Dimensionamiento energético</h3>
                             <p></p>
                             <iframe
-                                src="./public/diagramas/diagramas_actividades/Actividades-dimensionamiento enregético.drawio.html"
+                                src="../assets/diagrams/diagramas_actividades/Actividades-dimensionamiento enregético.drawio.html"
                                 class="diagram-frame"></iframe>
                         </section>
                         <section class="content-section">
                             <h3>7.2.2 Análisis del recurso solar</h3>
                             <p></p>
                             <iframe
-                                src="./public/diagramas/diagramas_actividades/Actividades - Análisis del recurso solar.drawio.html"
+                                src="../assets/diagrams/diagramas_actividades/Actividades - Análisis del recurso solar.drawio.html"
                                 class="diagram-frame"></iframe>
                         </section>
                         <section class="content-section">
                             <h3>7.2.3 Definición del objetivo enregético</h3>
                             <p></p>
                             <iframe
-                                src="./public/diagramas/diagramas_actividades/Actividades - definición del objetivo energético.drawio.html"
+                                src="../assets/diagrams/diagramas_actividades/Actividades - definición del objetivo energético.drawio.html"
                                 class="diagram-frame"></iframe>
                         </section>
                         <section class="content-section">
                             <h3>7.2.4 Cálculo de generación fotovoltaica</h3>
                             <h4>Potencia instalada:</h4>
                             <p>Potencia nominal total del generador fotovoltaico, calculada como la suma de la potencia de los módulos seleccionados. Se utiliza como base para la estimación de generación energética y la selección del equipamiento del sistema.</p>
-                            <iframe src="./public/diagramas/diagramas_actividades/Actividades - Cálculo de generación fotovoltaica.drawio.html" class="diagram-frame"></iframe>
+                            <iframe src="../assets/diagrams/diagramas_actividades/Actividades - Cálculo de generación fotovoltaica.drawio.html" class="diagram-frame"></iframe>
                         </section>
                         <section class="content-section">
                             <h3>7.2.5 Dimensionamiento del almacenamiento</h3>
                             <p></p>
-                            <iframe src="./public/diagramas/diagramas_actividades/Actividades - Dimensionamiento preliminar del almacenamiento.drawio.html" class="diagram-frame"></iframe>
+                            <iframe src="../assets/diagrams/diagramas_actividades/Actividades - Dimensionamiento preliminar del almacenamiento.drawio.html" class="diagram-frame"></iframe>
                         </section>
                         <section class="content-section">
                             <h3>7.2.6 Selección de la configuración del sistema</h3>
                             <p></p>
-                            <iframe src="./public/diagramas/diagramas_actividades/Actividades - Selección de la configuración del sistema.drawio.html" class="diagram-frame"></iframe>
+                            <iframe src="../assets/diagrams/diagramas_actividades/Actividades - Selección de la configuración del sistema.drawio.html" class="diagram-frame"></iframe>
                         </section>
                     </section>
                 </section>
