@@ -1,259 +1,117 @@
 /**
  * Auth.js - Gestión de Autenticación con Netlify Identity
- * Maneja login, logout y redirección de usuarios
  */
 
 // ====================================
-// VARIABLES GLOBALES
+// CONFIGURACIÓN
 // ====================================
 
 const PROTECTED_PAGES = ['index.html'];
-const LOGIN_PAGE = 'login.html';
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
 // ====================================
-// INICIALIZACIÓN DE NETLIFY IDENTITY
+// INICIALIZACIÓN
 // ====================================
 
-/**
- * Inicializar Netlify Identity Widget
- */
 function initNetlifyIdentity() {
-    if (window.netlifyIdentity) {
-        // Redirigir al login después del cierre de sesión
-        window.netlifyIdentity.on('logout', () => {
-            redirectToLogin();
-        });
+    if (!window.netlifyIdentity) return;
 
-        // Redirigir al dashboard después del login
-        window.netlifyIdentity.on('login', (user) => {
-            console.log('Usuario autenticado:', user.email);
-            // Redirigir a la página principal
-            window.location.href = 'index.html';
-        });
+    window.netlifyIdentity.on('login', (user) => {
+        console.log('Login:', user.email);
+        window.netlifyIdentity.close();
+        updateAuthButton();
+        logUserAccess();
+    });
 
-        // Manejador de errores de autenticación
-        window.netlifyIdentity.on('error', (err) => {
-            console.error('Error de autenticación:', err);
-        });
+    window.netlifyIdentity.on('logout', () => {
+        console.log('Logout');
+        updateAuthButton();
+        // Abrir modal de login automáticamente
+        setTimeout(() => {
+            window.netlifyIdentity.open('login');
+        }, 300);
+    });
 
-        return true;
-    }
-    return false;
+    window.netlifyIdentity.on('error', (err) => {
+        console.error('Error de autenticación:', err);
+    });
 }
 
 // ====================================
 // FUNCIONES DE AUTENTICACIÓN
 // ====================================
 
-/**
- * Verificar si el usuario está autenticado
- */
-async function isUserAuthenticated() {
+function isUserAuthenticated() {
     try {
-        if (window.netlifyIdentity) {
-            const user = window.netlifyIdentity.currentUser();
-            return user !== null;
-        }
-        return false;
-    } catch (error) {
-        console.error('Error verificando autenticación:', error);
+        return window.netlifyIdentity
+            ? window.netlifyIdentity.currentUser() !== null
+            : false;
+    } catch (e) {
         return false;
     }
 }
 
-/**
- * Obtener datos del usuario actual
- */
 function getCurrentUser() {
     try {
-        if (window.netlifyIdentity) {
-            return window.netlifyIdentity.currentUser();
-        }
-        return null;
-    } catch (error) {
-        console.error('Error obteniendo usuario:', error);
+        return window.netlifyIdentity
+            ? window.netlifyIdentity.currentUser()
+            : null;
+    } catch (e) {
         return null;
     }
 }
 
-/**
- * Redirigir al login si no está autenticado
- */
-function redirectToLogin() {
-    if (!window.location.href.includes(LOGIN_PAGE)) {
-        console.log('No autenticado. Redirigiendo a login...');
-        window.location.href = LOGIN_PAGE;
-    }
-}
-
-/**
- * Redirigir al dashboard si está autenticado (desde login)
- */
-function redirectToDashboard() {
-    console.log('Autenticado. Accediendo al dashboard...');
-    window.location.href = 'index.html';
-}
-
-// ====================================
-// PROTECCIÓN DE CONTENIDO
-// ====================================
-
-/**
- * Verificar acceso a página protegida
- */
-async function checkPageAccess() {
-    // Si no está protegida, permitir acceso directo
-    if (!PROTECTED_PAGES.includes(currentPage)) {
-        return true;
-    }
-
-    // Esperar a que Netlify Identity esté inicializado
-    await new Promise(resolve => {
-        const checkIdentity = () => {
-            if (window.netlifyIdentity) {
-                resolve();
-            } else {
-                setTimeout(checkIdentity, 100);
-            }
-        };
-        checkIdentity();
-    });
-
-    // Verificar autenticación
-    const authenticated = await isUserAuthenticated();
-
-    if (!authenticated && currentPage === 'index.html') {
-        redirectToLogin();
-        return false;
-    }
-
-    return true;
-}
-
-// ====================================
-// GESTIÓN DE UI PARA AUTENTICACIÓN
-// ====================================
-
-/**
- * Actualizar UI del botón de autenticación
- */
-async function updateAuthButton() {
-    const authButton = document.getElementById('auth-button');
-    if (!authButton) return;
-
-    const user = await isUserAuthenticated();
-
-    if (user) {
-        const currentUser = getCurrentUser();
-        authButton.textContent = `${currentUser?.email || 'Cuenta'} (Logout)`;
-        authButton.classList.add('logout');
-        authButton.addEventListener('click', logout);
-    } else {
-        authButton.textContent = 'Login';
-        authButton.classList.remove('logout');
-        authButton.addEventListener('click', () => {
-            if (window.netlifyIdentity) {
-                window.netlifyIdentity.open();
-            }
-        });
-    }
-}
-
-/**
- * Logout del usuario
- */
 function logout() {
     if (window.netlifyIdentity) {
         window.netlifyIdentity.logout();
-        console.log('Usuario desconectado');
     }
 }
 
-// ====================================
-// MANEJO DE FORMULARIO DE LOGIN MANUAL
-// ====================================
-
-/**
- * Inicializar formulario manual de login (fallback)
- */
-function initManualLoginForm() {
-    const form = document.getElementById('manual-login-form');
-    if (!form) return;
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const email = document.getElementById('email')?.value;
-        const password = document.getElementById('password')?.value;
-
-        if (!email || !password) {
-            alert('Por favor, completa todos los campos');
-            return;
-        }
-
-        try {
-            // Esta es una demostración. En producción usarías Netlify Identity
-            console.log('🔐 Intento de login con:', email);
-            alert('Por favor, usa el login de Netlify Identity de arriba.\n\nEst e formulario es solo un fallback para propósitos de demostración.');
-        } catch (error) {
-            console.error('Error en login:', error);
-            alert('Error durante el login. Por favor, intenta de nuevo.');
-        }
-    });
-}
-
-// ====================================
-// MOSTRAR PANEL DE LOGIN EN LA PÁGINA DE LOGIN
-// ====================================
-
-/**
- * Mostrar widget de Netlify Identity en página de login
- */
-function initLoginPage() {
-    if (currentPage === LOGIN_PAGE && window.netlifyIdentity) {
-        // El widget se inicializa automáticamente en el div con id "netlify-identity-container"
-        //window.netlifyIdentity.open('signup');
-        window.netlifyIdentity.open('login');
-        // Event listener para cuando se cierre sin login
-        const checkAuth = setInterval(async () => {
-            if (await isUserAuthenticated()) {
-                clearInterval(checkAuth);
-                redirectToDashboard();
-            }
-        }, 500);
-    }
-}
-
-// ====================================
-// SISTEMA DE PERMISOS (PREPARADO PARA FUTURO)
-// ====================================
-
-/**
- * Verificar si el usuario tiene permisos específicos
- */
 function hasPermission(permission) {
     const user = getCurrentUser();
     if (!user) return false;
-
-    // Aquí se pueden agregar lógicas de permisos basadas en:
-    // - Roles de usuario
-    // - Metadatos en Netlify Identity
-    // - Claims JWT
-
-    const userMetadata = user.user_metadata || {};
-    const roles = userMetadata.roles || [];
-
+    const roles = user.user_metadata?.roles || [];
     return roles.includes(permission);
 }
 
-/**
- * Registrar acceso de usuario (para análisis)
- */
 function logUserAccess() {
     const user = getCurrentUser();
     if (user) {
-        console.log(`Acceso de usuario: ${user.email} - Página: ${currentPage} - ${new Date().toLocaleString()}`);
+        console.log(`Acceso: ${user.email} — ${currentPage} — ${new Date().toLocaleString()}`);
+    }
+}
+
+// ====================================
+// PROTECCIÓN DE PÁGINA
+// ====================================
+
+function checkPageAccess() {
+    if (!PROTECTED_PAGES.includes(currentPage)) return;
+
+    if (!isUserAuthenticated()) {
+        // Abrir modal de login si no hay sesión
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.open('login');
+        }
+    }
+}
+
+// ====================================
+// BOTÓN DE AUTENTICACIÓN EN HEADER
+// ====================================
+
+function updateAuthButton() {
+    const btn = document.getElementById('auth-button');
+    if (!btn) return;
+
+    const user = getCurrentUser();
+
+    if (user) {
+        btn.textContent = `${user.email} — Salir`;
+        btn.onclick = logout;
+    } else {
+        btn.textContent = 'Login';
+        btn.onclick = () => window.netlifyIdentity?.open('login');
     }
 }
 
@@ -261,88 +119,28 @@ function logUserAccess() {
 // INICIALIZACIÓN GENERAL
 // ====================================
 
-/**
- * Ejecutar todas las inicializaciones cuando el DOM esté listo
- */
-document.addEventListener('DOMContentLoaded', async () => {
-    console.log('🔐 Iniciando sistema de autenticación...');
-
-    // Inicializar Netlify Identity
-    initNetlifyIdentity();
-
-    // Esperar a que Netlify Identity esté completamente cargado
-    const waitForIdentity = new Promise(resolve => {
-        const checkIdentity = () => {
-            if (window.netlifyIdentity) {
-                resolve();
-            } else {
-                setTimeout(checkIdentity, 100);
-            }
-        };
-        checkIdentity();
-    });
-
-    await waitForIdentity;
-
-    // Verificar acceso a página protegida
-    const hasAccess = await checkPageAccess();
-    if (!hasAccess) {
+document.addEventListener('DOMContentLoaded', () => {
+    if (!window.netlifyIdentity) {
+        console.error('Netlify Identity no está cargado. Verificá el script en el <head>.');
         return;
     }
 
-    // Actualizar UI del botón de autenticación
+    initNetlifyIdentity();
+    checkPageAccess();
     updateAuthButton();
-
-    // Inicializar página de login si aplica
-    initLoginPage();
-
-    // Inicializar formulario manual si existe
-    initManualLoginForm();
-
-    // Registrar acceso del usuario
     logUserAccess();
 
-    // Mostrar información en consola
     const user = getCurrentUser();
-    if (user) {
-        console.log(`✅ Sesión activa para: ${user.email}`);
-    } else {
-        console.log('⚠️ No hay sesión activa');
-    }
+    console.log(user ? `Sesión activa: ${user.email}` : 'Sin sesión activa');
 });
 
 // ====================================
-// MANEJO DE CAMBIOS DE SESIÓN
-// ====================================
-
-/**
- * Monitorear cambios en la sesión
- */
-if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('login', async () => {
-        console.log('Detectado login. Actualizando UI...');
-        updateAuthButton();
-        logUserAccess();
-    });
-
-    window.netlifyIdentity.on('logout', async () => {
-        console.log('Detectado logout. Actualizando UI...');
-        updateAuthButton();
-    });
-}
-
-// ====================================
-// EXPORTAR FUNCIONES PARA USO EXTERNO
+// API PÚBLICA
 // ====================================
 
 window.AuthManager = {
     isAuthenticated: isUserAuthenticated,
-    getCurrentUser: getCurrentUser,
-    logout: logout,
-    hasPermission: hasPermission,
-    redirectToDashboard: redirectToDashboard,
-    redirectToLogin: redirectToLogin
+    getCurrentUser,
+    logout,
+    hasPermission,
 };
-
-console.log('Auth.js cargado correctamente');
-console.log('Sistema de autenticación listo');
