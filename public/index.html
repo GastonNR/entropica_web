@@ -1,584 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelado de negocio</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <!-- Netlify Identity Widget para autenticación -->
+    <title>Login - Documentación Entrópica</title>
+    <link rel="stylesheet" href="./css/home.css">
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-     <!--
-    
-     -->
 </head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>📚 Entropic</h1>
+                <p>Documentación Técnica</p>
+                <p>Modelado de negocios para comercios fotovoltaico</p>
+            </div>
 
-<body>
-    <div class="app-container">
-        <!-- Header Superior -->
-        <header class="app-header">
-            <div class="header-content">
-                <div class="logo-section">
-                    <h1 class="app-title">Documentación Entropic</h1>
-                </div>
-                <div class="header-actions">
-                    <button id="auth-button" class="auth-btn">Login</button>
+            <div class="login-form">
+                <h2>Inicia sesión</h2>
+                <p class="login-subtitle">Accede con tu cuenta para ver la documentación completa</p>
+
+                <!-- Netlify Identity Widget -->
+                <div id="netlify-identity-container"></div>
+
+                <!-- Fallback manual login (si necesitas más control) -->
+                <form id="manual-login-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="tu.email@ejemplo.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="••••••••"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%;">
+                        Iniciar Sesión
+                    </button>
+                </form>
+
+                <div class="login-info">
+                    <h3>ℹ️ Acceso Restringido</h3>
+                    <p>Este sitio de documentación requiere autenticación. Si no tienes una cuenta, contacta al administrador.</p>
                 </div>
             </div>
-        </header>
 
-        <div class="main-layout">
-            <!-- Sidebar Izquierdo -->
-            <aside class="sidebar">
-                <nav class="nav-menu">
-                    <div class="nav-section">
-                        <h3 class="nav-section-title">Contenido</h3>
-                        <ul class="nav-list">
-                            <li>
-                                <a href="#encabezado" class="nav-link" data-section="encabezado">
-                                    <span class="nav-icon"></span>
-                                    Inicio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#resumen" class="nav-link" data-section="resumen">
-                                    <span class="nav-icon"></span>
-                                    Resumen
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#introduccion" class="nav-link" data-section="introduccion">
-                                    <span class="nav-icon"></span>
-                                    Introducción
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#metodologia" class="nav-link" data-section="metodologia">
-                                    <span class="nav-icon"></span>
-                                    Metodología
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#cadena-valor" class="nav-link" data-section="cadena-valor">
-                                    <span class="nav-icon"></span>
-                                    Cadena de Valor
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#jerarquia" class="nav-link" data-section="jerarquia">
-                                    <span class="nav-icon"></span>
-                                    Jerarquía de Procesos
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#flujo-trabajo" class="nav-link" data-section="flujo-trabajo">
-                                    <span class="nav-icon"></span>
-                                    Flujo de Trabajo
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#descripcion-procesos" class="nav-link" data-section="descripcion-procesos">
-                                    <span class="nav-icon"></span>
-                                    Descripción de Procesos
-                                </a>
-                                <ol>
-                                    <li><a href="#descripcion-procesos-A" class="nav-link" data-section="descripcion-procesos-A">Captar al cliente</a></li>
-                                    <li><a href="#descripcion-procesos-B" class="nav-link" data-section="descripcion-procesos-B">Recibir la demanda del
-                                            proyecto</a></li>
-                                    <li><a href="#descripcion-procesos-C" class="nav-link" data-section="descripcion-procesos-C">Dimensionamiento
-                                            energético</a></li>
-                                    <li><a href="#descripcion-procesos-D" class="nav-link" data-section="descripcion-procesos-D">Oferta económica al
-                                            cliente</a></li>
-                                    <li><a href="#descripcion-procesos-E" class="nav-link" data-section="descripcion-procesos-E">Diseño técnico detallado</a>
-                                    </li>
-                                    <li><a href="#descripcion-procesos-F" class="nav-link" data-section="descripcion-procesos-F">Cierre comercial</a></li>
-                                    <li><a href="#descripcion-procesos-G" class="nav-link" data-section="descripcion-procesos-G">Instalación</a></li>
-                                    <li><a href="#descripcion-procesos-H" class="nav-link" data-section="descripcion-procesos-H">Habilitación municipal</a>
-                                    </li>
-                                </ol>
-                            </li>
-                            <li>
-                                <a href="#actividades" class="nav-link" data-section="actividades">
-                                    <span class="nav-icon"></span>
-                                    Flujo de Actividades
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </aside>
-
-            <!-- Contenido Principal -->
-            <main class="main-content">
-                <section class="content-section" id="encabezado">
-                    <h1>
-                        Modelado de negocio para la gestión de proyectos fotovoltaicos.
-                    </h1>
-                    <h3>
-                        Caso de estudio: flujo de trabajo estándar para la gestión y diseño de plantas fotovoltaicas.
-                    </h3>
-                    <h3>Mendoza, 20/02/2026</h3>
-                    <h3>Ruiz Ahumada, Gastón Nicolás</h3>
-                    <hr>
-                </section>
-                <section class="content-section" id="resumen">
-                    <h2>Resumen</h2>
-                    <p>El presente documento modela los procesos técnicos mediante los cuales las empresas dedicadas a
-                        la comercialización e instalación de plantas fotovoltaicas realizan el análisis y
-                        dimensionamiento de sus proyectos.</p>
-                    <p>Independientemente de su escala operativa, las organizaciones del sector siguen una secuencia de
-                        procesos orientados a transformar información inicial del cliente en una propuesta técnica
-                        yeconómicamente viable. Si bien la complejidad y especialización varían según el tamaño del
-                        proyecto —desde instalaciones residenciales hasta desarrollos de gran escala— se identifican
-                        actividades comunes que pueden agruparse en procesos estandarizados.</p>
-                    <p>Desde una perspectiva sistémica, dichas actividades se organizan en procesos que generan valor
-                        para la organización. Cada proceso integra un conjunto de actividades o subprocesos que pueden
-                        escalar en función de la magnitud del proyecto. En proyectos de menor escala, varias actividades
-                        pueden concentrarse dentro de un mismo proceso. En proyectos de mayor envergadura, esas mismas
-                        actividades se formalizan como procesos diferenciados, con asignación específica de
-                        responsabilidades y mayor grado de especialización</p>
-                    <p>El modelado se realiza mediante una estructura general aplicable a proyectos fotovoltaicos de
-                        cualquier dimensión. Se utiliza la metodología de modelado de negocio con el fin de identificar
-                        procesos, eventos disparadores, entradas de información, recursos requeridos, actores
-                        organizacionales involucrados, objetos de negocio generados y relaciones entre estos. <br>
-                        La viabilidad económica de cada proyecto depende del análisis técnico realizado. En
-                        consecuencia, las actividades vinculadas a la evaluación económica se integran dentro del flujo
-                        de trabajo modelado, dado que forman parte del sistema organizacional que permite a la empresa
-                        presentar propuestas técnica y financieramente viables.</p>
-                </section>
-                <!-- Sección: Introducción -->
-                <section id="introduccion" class="content-section">
-                    <h2>1. Introducción</h2>
-                    <p>El presente modelado de negocio constituye documentación de apoyo para el relevamiento de
-                        requerimientos asociados al desarrollo de Entropic_pv, aplicación SaaS orientada a la gestión y
-                        diseño de plantas fotovoltaicas.</p>
-                    <p>La formalización del flujo de trabajo y la delimitación de procesos organizacionales permiten
-                        establecer los alcances y límites funcionales del sistema a desarrollar. La identificación
-                        estructurada de procesos y objetos de negocio facilita la posterior definición de
-                        funcionalidades coherentes con la operatoria real del sector.</p>
-                    <p>El análisis se apoya en entrevistas realizadas a representantes técnicos y financieros de dos
-                        empresas del rubro: “Origen” y “Energiú”. El alcance del modelado pretende analizar todos los
-                        procesos del negocio, desde los comerciales y técnicos, hasta la ejecución de obras y las
-                        habilitaciones municipales.</p>
-                    <p>La representación del modelo se realiza mediante notación gráfica y textual. Se utiliza el
-                        Lenguaje Unificado de Modelado (UML) con la extensión UML Business, que permite representar
-                        procesos, entradas, salidas, actores organizacionales, recursos, objetos de negocio y productos
-                        generados. La notación gráfica se complementa con descripciones textuales que explicitan el
-                        contenido de cada elemento modelado.</p>
-                </section>
-
-                <!-- Sección: Metodología -->
-                <section id="metodologia" class="content-section">
-                    <h2>2. Metodología aplicada</h2>
-                    <p>
-                        Las actividades del flujo de trabajo se agrupan en procesos diferenciados y delimitados. Cada
-                        proceso se caracteriza por:
-                    </p>
-                    <ul>
-                        <li>Un objetivo organizacional específico</li>
-                        <li>Un evento de inicio</li>
-                        <li>Un conjunto de entradas</li>
-                        <li>Una secuencia de actividades internas</li>
-                        <li>Un conjunto de actores, objetos de negocio o recursos que operan</li>
-                        <li>Un conjunto de reglas, actores que supervisan y controlan el proceso.</li>
-                    </ul>
-                    <p>Las entradas pueden consistir en eventos, información relevante, recursos u objetos de negocio.
-                        Las salidas pueden materializarse como productos, información generada o eventos que activan
-                        procesos posteriores.</p>
-                    <p>Las actividades orientadas a producir un mismo resultado organizacional se agrupan dentro del
-                        mismo proceso.</p>
-                    <p>En el documento se emplean los siguientes tipos de diagramas:</p>
-                    <ol>
-                        <li>Diagrama de cadena de valor</li>
-                        <li>Jerarquía de procesos</li>
-                        <li>Flujos de trabajo</li>
-                        <li>Diagramas de procesos (visón caja negra)</li>
-                        <li>Diagramas de actividades (visión caja blanca)</li>
-                    </ol>
-                    <div class="card-group">
-                        <div class="info-card">
-                            <h3>Diagrama de cadena de valor</h3>
-                            <p>Representa el conjunto de procesos de manera secuencial, que entregan valor a la empresa.
-                            </p>
-                        </div>
-                        <div class="info-card">
-                            <h3>Diagrama de jerarquia de procesos</h3>
-                            <p>Representa la relación jerárquica entre los procesos y subprocesos que los componen.</p>
-                        </div>
-                        <div class="info-card">
-                            <h3>Escalabilidad</h3>
-                            <p>Diseño modular que permite crecer sin perder rendimiento.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Sección: Cadena de Valor -->
-                <section id="cadena-valor" class="content-section">
-                    <h2>3. Cadena de Valor</h2>
-                    <p>La cadena de valor representa la secuencia de procesos que generan valor para la organización.
-                        Los procesos principales se disponen de manera secuencial, desde la captación inicial de
-                        información hasta la validación técnica y económica del proyecto.</p>
-                    <p>Las actividades de soporte, representadas transversalmente, corresponden a áreas organizacionales
-                        que intervienen indirectamente en la generación de valor, tales como ventas, gestión de
-                        proyectos y gestión normativa.</p>
-
-                    <iframe src="./assets/diagrams/Cadena de valor de procesos técnicos.drawio.html" class="diagram-frame"></iframe>
-                    <div class="section-description">
-                        <h3>Componentes Principales</h3>
-                        <ol>
-                            <li><strong>Proceso:</strong> Representa un conjunto de actividades que mantienen un
-                                objetivo que otorga valor a la empresa.</li>
-                            <li><strong>Actividades de soporte:</strong>Representan áreas o activides fuera de los
-                                procesos principales que ayudan y prestan apoyo a esos proceos.</li>
-                        </ol>
-                    </div>
-                </section>
-
-                <!-- Sección: Jerarquía de Procesos -->
-                <section id="jerarquia" class="content-section">
-                    <h2>4. Jerarquía de Procesos</h2>
-                    <p>Los macroprocesos identificados en la cadena de valor se descomponen en subprocesos. Cada
-                        subproceso genera un producto intermedio claramente identificable y puede subdividirse hasta
-                        alcanzar el nivel de actividad elemental no descomponible.</p>
-                    <p>Se distinguen cuatro niveles de descomposición:</p>
-                    <ul>
-                        <li>Nivel 0: macroprocesos de la cadena de valor</li>
-                        <li>Nivel 1: subprocesos</li>
-                        <li>Nivel 2: subprocesos de los subprocesos</li>
-                    </ul>
-                    <p>La nomenclatura utilizada es alfanumérica y refleja la relación jerárquica entre procesos y
-                        subprocesos.</p>
-                    <p>(Se mantienen las definiciones originales de los subprocesos D y E, reformuladas bajo criterios
-                        descriptivos y terminología consistente.)</p>
-                    <iframe src="./assets/diagrams/jerarquía de procesos.drawio.html" class="diagram-frame"></iframe>
-                    <div class="section-description">
-                        <h3>Componentes Principales</h3>
-                        <ol>
-                            <li><strong>Proceso: </strong> Representa un conjunto de actividades que mantienen un
-                                objetivo que otorga valor a la empresa.</li>
-                            <li><strong>Subprocesos: </strong>Representan procesos que forman parte de un proceso mayor.
-                            </li>
-                            <li><strong>Swinlines: </strong>Representan, en este caso, los distintos niveles de
-                                anidación en los cuales se encuentran los subprocesos.</li>
-                            <li><strong>Flechas: </strong>Indican cuales son los subprocesos que se desprenden de un
-                                proceso.</li>
-                        </ol>
-                    </div>
-                    <p>Los macro-procesos que generan valor directo son los siguientes:</p>
-                    <div class="card-group">
-                        <a href="">
-                            <div class="info-card">
-                                <h4>A. Captación del cliente</h4>
-                                <p>Objetivo: atraer clientes</p>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="info-card">
-                                <h4>B. Demanda del proyecto</h4>
-                                <p>Captar la necesidad del cliente</p>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="info-card">
-                                <h4>C. Dimensionamiento energético</h4>
-                                <p>Calcular la planta</p>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="info-card">
-                                <h4>D. Oferta económica al cliente</h4>
-                                <p>Definir el precio del proyecto</p>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="info-card">
-                                <h4>E. Diseño técnico detallado</h4>
-                                <p>Definir y ajustar la instalación</p>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="info-card">
-                                <h4>F. Cierre comercial</h4>
-                                <p>Cerrar el pago</p>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="info-card">
-                                <h4>G. Instalación</h4>
-                                <p>Concretar el proyecto</p>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="info-card">
-                                <h4>H. Habilitación municipal</h4>
-                                <p>Gestionar la habilitación para el cambio de medidor</p>
-                            </div>
-                        </a>
-                    </div>
-                </section>
-
-                <!-- Sección: Flujo de Trabajo -->
-                <section id="flujo-trabajo" class="content-section">
-                    <h2>5. Flujo de Trabajo General</h2>
-                    <p>El diagrama de flujo de trabajo representa la secuencia lógica y las relaciones de dependencia
-                        entre procesos y subprocesos. En este nivel se visualizan las entradas y salidas principales,
-                        así como las posibles retroalimentaciones entre procesos.</p>
-                    <iframe src="./assets/diagrams/flujo_de_trabajo.drawio.html" class="diagram-frame"></iframe>
-                    <div class="section-description">
-                        <h3>Características del Flujo</h3>
-                        <ul>
-                            <li><strong>Flechas: </strong>Indican la dirección del flujo de trabajo.</li>
-                            <li><strong>Procesos: </strong>Muestran los procesos de la cadena de valor junto con los
-                                subprocesos.</li>
-                            <li><strong>Información: </strong>Información entrante o saliente que el proceso necesita.
-                            </li>
-                            <li><strong>Producto: </strong>Producto entregable resultado del proceso.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Sección: Descripción de Procesos -->
-                <section id="descripcion-procesos" class="content-section">
-                    <h2>6. Descripción de Procesos</h2>
-                    <div class="process-list">
-                        <div class="section-description">
-                            <h3>Cada proceso se describe en términos de: </h3>
-                            <ul>
-                                <li><strong>Proposito organizacional</strong></li>
-                                <li><strong>Evento disparador</strong></li>
-                                <li><strong>Entradas.</strong></li>
-                                <li><strong>Salidas</strong></li>
-                                <li><strong>Relaciones con otros procesos</strong></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p>Las descripciones mantienen el nivel de abstracción correspondiente al proceso y no incorporan
-                        detalle operativo propio de las actividades internas.</p>
-
-                    <!--Aquí empiezan los diagramas de procesos-->
-                    <section id="descripcion-procesos-A" class="content-section">
-                        <h3>6.1. Captar al cliente A</h3>
-                        <p>Las necesidades que llevan a un cliente a querer comprar un equipo solar, pueden ser varias:
-                            tener electricidad en una cabaña o domicilio sin conexión a red, utilizar una bomba de agua
-                            para sacar agua de pozo, proveer de energía a su industría, etc. Independientemente de la
-                            necesidad, el primer contacto suele ser boca en boca o por medio de una búsqueda en
-                            internet.</p>
-                        <p>Para lo cuál existe una página web que ofrece los servicios y publica su información de
-                            contacto. Una vez que el cliente, se contacta con la empresa, es atendido por la parte de
-                            markenting, y de ahí es derivado a la parte de ventas en al sucursal correspondiente.</p>
-                        <p>Dentro de los recursos de marketing digital que suelen utilizarse, se encuentran: paginás
-                            web, chatbots, google ads, redes sociales y aplicaciones de mensajería.</p>
-                        <p>Otro modo de contactar es a través de vendedores freelancers, los cuales se dedican a
-                            conseguir clientes y obtienen una comisión por ventas realizadas.</p>
-                        <iframe src="./assets/diagrams/diagramas_procesos/Captación del cliente.drawio.html"
-                            class="diagram-frame"></iframe>
-                    </section>
-                    <section id="descripcion-procesos-B" class="content-section">
-                        <h3>6.2. Demanda del proyecto B</h3>
-                        <p>Proceso inicial en el cual se recopilan los datos generales del cliente y del proyecto. Se
-                            releva la información necesaria para establecer la demanda energética preliminar.</p>
-                        <iframe src="./assets/diagrams/diagramas_procesos/Demanda del proyecto.drawio.html"
-                            class="diagram-frame"></iframe>
-                    </section>
-                    <section id="descripcion-procesos-C" class="content-section">
-                        <h3>6.3. Dimensionamiento energético C</h3>
-                        <p>Procesos técnico principal que abarca varios subprocesos. Su objetivo es dimensionar los
-                            equipos, la instalación, y la potencia necesaria para poder satisfacer la demanda del
-                            proyecto,</p>
-                        <iframe src="./assets/diagrams/diagramas_procesos/Dimensionamiento energético.drawio.html"
-                            class="diagram-frame"></iframe>
-                        <section id="descripcion-procesos-C.1" class="content-section">
-                            <h3>6.3.1 Análisis del recurso solar C.1</h3>
-                            <p>Proceso mediante el cual se evalúan las condiciones del emplazamiento: radiación solar
-                                directa y difusa, promedio anual de días soleados, orientación, pendiente, sombras,
-                                restricciones estructurales, accesibilidad y distancia al punto de conexión. El
-                                resultado es una estimación de la capacidad de producción energética del sitio y de la
-                                potencia máxima físicamente instalable.</p>
-                            <iframe src="./assets/diagrams/diagramas_procesos/Análisis del recurso solar.drawio.html"
-                                class="diagram-frame"></iframe>
-                        </section>
-                        <section id="descripcion-procesos-C.2" class="content-section">
-                            <h3>6.3.2 Cálculo de potencia C.2</h3>
-                            <p></p>
-                            <iframe src="./assets/diagrams/diagramas_procesos/Cálculo de potencia C.2.drawio.html"
-                                class="diagram-frame"></iframe>
-                            <section id="descripcion-procesos-C.2.1" class="content-section">
-                                <h3>6.3.2.1 Definición del objetivo energético C.2.1</h3>
-                                <p></p>
-                                <iframe src="./assets/diagrams/diagramas_procesos/C.2.1.drawio.html"
-                                    class="diagram-frame"></iframe>
-                            </section>
-                            <section id="descripcion-procesos-C.2.2" class="content-section">
-                                <h3>6.3.2.2 Cálculo de generación fotovoltaica C.2.2</h3>
-                                <p></p>
-                                <iframe src="./assets/diagrams/diagramas_procesos/C.2.2.drawio.html"
-                                    class="diagram-frame"></iframe>
-                            </section>
-                            <section id="descripcion-procesos-C.2.3" class="content-section">
-                                <h3>6.3.2.3 Dimensionamiento preliminar del almacenamiento C.2.3</h3>
-                                <p></p>
-                                <iframe src="./assets/diagrams/diagramas_procesos/C.2.3.drawio.html"
-                                    class="diagram-frame"></iframe>
-                            </section>
-                        </section>
-                        <section id="descripcion-procesos-C.3" class="content-section">
-                            <h3>6.3.3 Selección de la configuración del sistema</h3>
-                            <p></p>
-                            <iframe
-                                src="./assets/diagrams/diagramas_procesos/Selección de la configuración del sistema.drawio.html"
-                                frameborder="0" class="diagram-frame"></iframe>
-                        </section>
-                        <section id="descripcion-procesos-C.4" class="content-section">
-                            <h3>6.3.4 Simulación, validación y ajuste</h3>
-                            <p></p>
-                            <iframe
-                                src="./assets/diagrams/diagramas_procesos/Simulación, validación y ajuste.drawio.html"
-                                frameborder="0" class="diagram-frame"></iframe>
-                        </section>
-                    </section>
-                    <section id="descripcion-procesos-D" class="content-section">
-                        <h3>6.4. Oferta económica al cliente</h3>
-                        <p></p>
-                        <iframe src="./assets/diagrams/diagramas_procesos/Oferta económica al cliente.drawio.html"
-                            class="diagram-frame"></iframe>
-                        <section id="descripcion-procesos-D.1" class="content-section">
-                            <h3>6.4.1 Cotización detallada D.1</h3>
-                            <p></p>
-                            <iframe src="./assets/diagrams/diagramas_procesos/Cotización detallada D.1.drawio.html"
-                                class="diagram-frame"></iframe>
-                        </section>
-                        <section id="descripcion-procesos-D.2" class="content-section">
-                            <h3>6.4.2 Análisis de viabilidad económica</h3>
-                            <p></p>
-                            <iframe
-                                src="./assets/diagrams/diagramas_procesos/Análisis de viabilidad económica.drawio.html"
-                                frameborder="0" class="diagram-frame"></iframe>
-                        </section>
-                    </section>
-                    <section id="descripcion-procesos-E" class="content-section">
-                        <h3>6.5 Diseño detallado del sistema E</h3>
-                        <p></p>
-                        <iframe src="./assets/diagrams/diagramas_procesos/Diseño detallado.drawio.html"
-                            class="diagram-frame"></iframe>
-                    </section>
-                    <section id="descripcion-procesos-F" class="content-section">
-                        <h3>6.6 Cierre comercial F</h3>
-                        <p></p>
-                        <iframe src="./assets/diagrams/diagramas_procesos/Cierre comercial.drawio.html"
-                            class="diagram-frame"></iframe>
-                    </section>
-                    <section id="descripcion-procesos-G" class="content-section">
-                        <h3>6.7 Instalación G</h3>
-                        <p></p>
-                        <iframe src="./assets/diagrams/diagramas_procesos/Instalación.drawio.html"
-                            class="diagram-frame"></iframe>
-                    </section>
-                    <section id="descripcion-procesos-H" class="content-section">
-                        <h3>6.8 Habilitación municipal H</h3>
-                        <p></p>
-                        <iframe src="./assets/diagrams/diagramas_procesos/Habilitación municipal.drawio.html"
-                            class="diagram-frame"></iframe>
-                    </section>
-                </section>
-
-                <!-- Sección: Flujo de Actividades -->
-                <section id="actividades" class="content-section">
-                    <h2>7. Flujo de Actividades</h2>
-                    <p>El diagrama de flujo de actividades expone el detalle interno de los procesos, la distribución de
-                        roles organizacionales y la interacción entre áreas. Cada proceso se analiza como una estructura
-                        compuesta por actividades que producen objetos de negocio específicos dentro del sistema
-                        organizacional orientado a la generación de una propuesta técnica y económicamente viable.</p>
-
-                    <iframe src="./assets/diagrams/flujo_de_actividades.drawio.html" class="diagram-frame"></iframe>
-                    <div class="section-description">
-                        <h3>7.1 Notación utilizada</h3>
-                        <p>Se emplea la notación UML 2.5 para diagramas de actividades.</p>
-                        <ul>
-                            <li><strong>Flechas: </strong>Muestran la dirección del flujo.</li>
-                            <li><strong>Actividad simple: </strong>Las actividades simples se representan mediante nodos
-                                con bordes redondeados.</li>
-                            <li><strong>Objetos: </strong>Los objetos resultantes se representan mediante rectángulos
-                                con fondo amarillo con una cabecera que indican el tipo de objeto al que pertenecen.
-                            </li>
-                            <li><strong>Actividades estructuradas: </strong>representan procesos compuestos, se
-                                identifican con el encabezado "structured", con bordes redondeados y líneas
-                                discontinuas.</li>
-                            <li><strong>Eventos: </strong>Se encuentran reprensentados con un restángula con forma de
-                                media flecha, con líneas azules. Significan eventos que disparan procesos o actividades.
-                            </li>
-                            <li><strong>Swinlines: </strong>Representan distintas áreas, roles, actores y responsables
-                                de las actividades.</li>
-                            <li><strong>Nodo de inicio: </strong>Es un círculo simple. Es el lugar dónde se inicia el
-                                flujo de actividad.</li>
-                            <li><strong>Nodo de decisión: </strong>Es un rombo y representa un lugar dónde el flujo se
-                                divide y toma distintos caminos según la decisión que se tome en el recorrido del flujo.
-                            </li>
-                            <li><strong>Nodo de confluencia: </strong>Es un rombo y representa un lugar dónde los flujos
-                                confluyen (sin paralelizarse)</li>
-                            <li><strong>Join: </strong>Líneas paralelas que representan lugares dónde el flujo se abre
-                                en distintos flujos o actividades paralelas.</li>
-                            <li><strong>Fork: </strong>Líneas paralelas similares al join, que representan lugares dónde
-                                dos o más flujos se unen.</li>
-                            <li><strong>Nodo final: </strong>Representa el final del flujo de actividades.</li>
-                        </ul>
-                    </div>
-                    <section class="content-section">
-                        <h3>7.2 Diagramas de actividades técnicas.</h3>
-                        <p>A continuación se exponen los diagramas de actividades (de caja blanca), de los procesos
-                            técnicos, esto es, el proceso de dimensionamiento energético (C) de la cadena de valor junto
-                            con sus subprocesos</p>
-                        <p>Los demás procesos de negocio serán ampliados en ediciones posteriores.</p>
-                        <section class="content-section">
-                            <h3>7.2.1 Dimensionamiento energético</h3>
-                            <p></p>
-                            <iframe
-                                src="./assets/diagrams/diagramas_actividades/Actividades-dimensionamiento enregético.drawio.html"
-                                class="diagram-frame"></iframe>
-                        </section>
-                        <section class="content-section">
-                            <h3>7.2.2 Análisis del recurso solar</h3>
-                            <p></p>
-                            <iframe
-                                src="./assets/diagrams/diagramas_actividades/Actividades - Análisis del recurso solar.drawio.html"
-                                class="diagram-frame"></iframe>
-                        </section>
-                        <section class="content-section">
-                            <h3>7.2.3 Definición del objetivo enregético</h3>
-                            <p></p>
-                            <iframe
-                                src="./assets/diagrams/diagramas_actividades/Actividades - definición del objetivo energético.drawio.html"
-                                class="diagram-frame"></iframe>
-                        </section>
-                        <section class="content-section">
-                            <h3>7.2.4 Cálculo de generación fotovoltaica</h3>
-                            <h4>Potencia instalada:</h4>
-                            <p>Potencia nominal total del generador fotovoltaico, calculada como la suma de la potencia de los módulos seleccionados. Se utiliza como base para la estimación de generación energética y la selección del equipamiento del sistema.</p>
-                            <iframe src="./assets/diagrams/diagramas_actividades/Actividades - Cálculo de generación fotovoltaica.drawio.html" class="diagram-frame"></iframe>
-                        </section>
-                        <section class="content-section">
-                            <h3>7.2.5 Dimensionamiento del almacenamiento</h3>
-                            <p></p>
-                            <iframe src="./assets/diagrams/diagramas_actividades/Actividades - Dimensionamiento preliminar del almacenamiento.drawio.html" class="diagram-frame"></iframe>
-                        </section>
-                        <section class="content-section">
-                            <h3>7.2.6 Selección de la configuración del sistema</h3>
-                            <p></p>
-                            <iframe src="./assets/diagrams/diagramas_actividades/Actividades - Selección de la configuración del sistema.drawio.html" class="diagram-frame"></iframe>
-                        </section>
-                    </section>
-                </section>
-
-                <!-- Footer -->
-                <footer class="main-footer">
-                    <p>&copy; 2026 Entrópica. Documentación Técnica. Reservados todos los derechos.</p>
-                </footer>
-            </main>
+            <div class="login-footer">
+                <p>&copy; 2026 Entrópica. Todos los derechos reservados.</p>
+            </div>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="./js/auth.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="auth.js"></script>
 </body>
-
 </html>
