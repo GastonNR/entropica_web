@@ -8,6 +8,7 @@
 
 const PROTECTED_PAGES = ['home.html'];
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const logoutBtn = document.getElementById('logout-button').addEventListener('click', logout)
 
 // ====================================
 // INICIALIZACIÓN
