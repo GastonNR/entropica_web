@@ -16,21 +16,18 @@ const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 function initNetlifyIdentity() {
     if (!window.netlifyIdentity) return;
 
+    // Login exitoso → redirigir a home
     window.netlifyIdentity.on('login', (user) => {
         console.log('Login:', user.email);
-        window.netlifyIdentity.close();
-        updateAuthButton();
         logUserAccess();
-        window.location.href='/pages/home.html'
+        window.netlifyIdentity.close();
+        window.location.href = '/pages/home.html';
     });
 
+    // Logout → redirigir a index (el modal aparece solo por el evento init)
     window.netlifyIdentity.on('logout', () => {
         console.log('Logout');
-        updateAuthButton();
-        // Abrir modal de login automáticamente
-        setTimeout(() => {
-            window.netlifyIdentity.open('login');
-        }, 300);
+        window.location.href = '/index.html';
     });
 
     window.netlifyIdentity.on('error', (err) => {
@@ -65,7 +62,6 @@ function getCurrentUser() {
 function logout() {
     if (window.netlifyIdentity) {
         window.netlifyIdentity.logout();
-        window.location.href="/index.html"
     }
 }
 
@@ -91,34 +87,24 @@ function checkPageAccess() {
     if (!PROTECTED_PAGES.includes(currentPage)) return;
 
     if (!isUserAuthenticated()) {
-        // Abrir modal de login si no hay sesión
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.open('login');
-        }
+        window.location.href = '/index.html';
     }
 }
 
 // ====================================
-// BOTÓN DE AUTENTICACIÓN EN HEADER
+// BOTÓN DE LOGOUT EN HEADER
 // ====================================
 
-function updateAuthButton() {
+function initLogoutButton() {
     const btn = document.getElementById('logout-button');
     if (!btn) return;
 
     const user = getCurrentUser();
-
     if (user) {
         btn.textContent = `${user.email} — Salir`;
-        btn.onclick = logout;
-        
-    } else {
-        btn.textContent = 'Login';
-        btn.onclick = () => window.netlifyIdentity?.open('login');
     }
+    btn.onclick = logout;
 }
-
-function 
 
 // ====================================
 // INICIALIZACIÓN GENERAL
@@ -132,12 +118,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initNetlifyIdentity();
     checkPageAccess();
-    updateAuthButton();
+    initLogoutButton();
     logUserAccess();
 
     const user = getCurrentUser();
     console.log(user ? `Sesión activa: ${user.email}` : 'Sin sesión activa');
 });
+
+// ====================================
+// INICIO DE SESIÓN EN INDEX
+// ====================================
+
+// Si estamos en index.html y ya hay sesión activa, ir directo a home
+// Si no hay sesión, abrir el modal automáticamente
+if (currentPage === 'index.html' && window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', (user) => {
+        if (user) {
+            window.location.href = '/pages/home.html';
+        } else {
+            window.netlifyIdentity.open('login');
+        }
+    });
+}
 
 // ====================================
 // API PÚBLICA
