@@ -136,11 +136,18 @@ document.addEventListener('DOMContentLoaded', () => {
 // Si no hay sesión, abrir el modal automáticamente
 if (currentPage === 'index.html' && window.netlifyIdentity) {
     window.netlifyIdentity.on('init', (user) => {
-        if (user) {
-            window.location.href = '/pages/home.html';
-        } else {
-            window.netlifyIdentity.open('login');
+
+        if (PROTECTED_PAGES.includes(currentPage) && !user) {
+            window.location.href = "/index.html"
+            return
         }
+
+        //if (user) {
+        //    window.location.href = '/pages/home.html';
+        //} else {
+        //    window.netlifyIdentity.open('login');
+        //}
+
         initLogoutButton()
     });
 }
