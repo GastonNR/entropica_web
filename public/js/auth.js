@@ -96,10 +96,13 @@ function checkPageAccess() {
 // ====================================
 
 function initLogoutButton() {
+    console.log("dentro de la función de initLogoutButton")
     const btn = document.getElementById('logout-button');
+    console.log("Contenido de btn: " + btn)
     if (!btn) return;
 
     const user = getCurrentUser();
+    console.log("Contenido de user: " + user)
     if (user) {
         btn.textContent = `${user.email} — Salir`;
     }
