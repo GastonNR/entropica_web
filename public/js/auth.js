@@ -1,6 +1,6 @@
 /**
  * Auth.js - Gestión de Autenticación con Netlify Identity
- */
+*/
 
 // ====================================
 // CONFIGURACIÓN
@@ -62,6 +62,7 @@ function getCurrentUser() {
 function logout() {
     if (window.netlifyIdentity) {
         window.netlifyIdentity.logout();
+        window.location.href="/index.html"
     }
 }
 
