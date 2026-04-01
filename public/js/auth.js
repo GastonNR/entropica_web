@@ -65,6 +65,7 @@ function getCurrentUser() {
 function logout() {
     if (window.netlifyIdentity) {
         window.netlifyIdentity.logout();
+        window.location.href="/index.html"
     }
 }
 
@@ -110,7 +111,7 @@ function updateAuthButton() {
     if (user) {
         btn.textContent = `${user.email} — Salir`;
         btn.onclick = logout;
-        window.location.href="/index.html"
+        
     } else {
         btn.textContent = 'Login';
         btn.onclick = () => window.netlifyIdentity?.open('login');
