@@ -138,6 +138,7 @@ if (currentPage === 'index.html' && window.netlifyIdentity) {
     window.netlifyIdentity.on('init', (user) => {
         if (user) {
             window.location.href = '/pages/home.html';
+            initLogoutButton()
         } else {
             window.netlifyIdentity.open('login');
         }
