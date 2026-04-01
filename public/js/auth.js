@@ -142,11 +142,11 @@ if (currentPage === 'index.html' && window.netlifyIdentity) {
             return
         }
 
-        //if (user) {
-        //    window.location.href = '/pages/home.html';
-        //} else {
-        //    window.netlifyIdentity.open('login');
-        //}
+        if (user) {
+            window.location.href = '/pages/home.html';
+        } else {
+            window.netlifyIdentity.open('login');
+        }
 
         initLogoutButton()
     });
