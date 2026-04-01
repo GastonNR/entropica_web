@@ -6,7 +6,7 @@
 // CONFIGURACIÓN
 // ====================================
 
-const PROTECTED_PAGES = ['home.html'];
+const PROTECTED_PAGES = ['/pages/home.html'];
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
 // ====================================
