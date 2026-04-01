@@ -21,6 +21,7 @@ function initNetlifyIdentity() {
         window.netlifyIdentity.close();
         updateAuthButton();
         logUserAccess();
+        window.location.href='/pages/home.html'
     });
 
     window.netlifyIdentity.on('logout', () => {
