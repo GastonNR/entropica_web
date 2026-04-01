@@ -6,7 +6,7 @@
 // CONFIGURACIÓN
 // ====================================
 
-const PROTECTED_PAGES = ['index.html'];
+const PROTECTED_PAGES = ['home.html'];
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
 // ====================================
@@ -102,7 +102,7 @@ function checkPageAccess() {
 // ====================================
 
 function updateAuthButton() {
-    const btn = document.getElementById('auth-button');
+    const btn = document.getElementById('logout-button');
     if (!btn) return;
 
     const user = getCurrentUser();
@@ -110,11 +110,14 @@ function updateAuthButton() {
     if (user) {
         btn.textContent = `${user.email} — Salir`;
         btn.onclick = logout;
+        window.location.href="/index.html"
     } else {
         btn.textContent = 'Login';
         btn.onclick = () => window.netlifyIdentity?.open('login');
     }
 }
+
+function 
 
 // ====================================
 // INICIALIZACIÓN GENERAL
