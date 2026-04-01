@@ -8,7 +8,6 @@
 
 const PROTECTED_PAGES = ['home.html'];
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-const logoutBtn = document.getElementById('logout-button').addEventListener('click', logout)
 
 // ====================================
 // INICIALIZACIÓN
@@ -119,10 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Netlify Identity no está cargado. Verificá el script en el <head>.');
         return;
     }
-
+    console.log("documento cargado.")
     initNetlifyIdentity();
     checkPageAccess();
-    //initLogoutButton();
+    initLogoutButton();
     logUserAccess();
 
     const user = getCurrentUser();
