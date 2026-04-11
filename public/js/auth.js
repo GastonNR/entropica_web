@@ -62,7 +62,7 @@ function getCurrentUser() {
 function logout() {
     if (window.netlifyIdentity) {
         window.netlifyIdentity.logout();
-        window.location.href="/index.html"
+        //window.location.href="/index.html"
     }
 }
 
@@ -149,7 +149,7 @@ if (currentPage === 'index.html' && window.netlifyIdentity) {
             window.netlifyIdentity.open('login');
         }
 
-        initLogoutButton()
+        //initLogoutButton()
     });
 }
 
