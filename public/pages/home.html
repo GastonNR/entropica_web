@@ -525,8 +525,40 @@
                             class="diagram-frame"></iframe>
                     </section>
                     <section id="descripcion-procesos-H" class="content-section">
+
                         <h3>6.8 Habilitación municipal H</h3>
-                        <p></p>
+
+                        <p>Este último proceso consiste en habilitar la instalación para que el municipio permita conectar a la red municipal. Este procesos solo se lleva a cabo si la instalación es un sistema on-grid o híbrido y culmina con el cambio del medidor unidireccional a un medidor bidireccional que permita contabilizar el consumo y el vuelco a red. Este proceso debe ser llevado a cabo por un técnico habilitador, quien se encarga de llevar a cabo los trámites burocráticos correspondientes para dicha habilitación.</p>
+
+                        <p>Para lo cual los municipios suelen exigir la siguiente documentación:</p>
+
+                        <ol>
+                            <li>Del usuario:
+                                <ol>
+                                    <li>Factura eléctrica.</li>
+                                    <li>Foto de frente y dorso del DNI del titular del suministro eléctrico. En caso de ser sociedad, adjuntar estatuto.</li>
+                                    <li>CUIT del titular del suministro eléctrico.</li>
+                                    <li>Correo electrónico</li>
+                                    <li>Teléfono de contacto.</li>
+                                    <li>Ubicación  de la  propiedad (coordenadas)</li>
+                                    <li>Mensura de la propiedad.</li>
+                                    <li>Escritura de la propiedad.</li>
+                                </ol>
+                            </li>
+                            <li>De la instalación:
+                                <ol>
+                                    <li>Cantidad de paneles.</li>
+                                    <li>Cantidad de strings.</li>
+                                    <li>Cantidad de inversores.</li>
+                                    <li>Potencia de generación (kW).</li>
+                                    <li>Potencia del equipo inversor (kW).</li>
+                                    <li>Potencia de almacenamiento (en caso de instalación con baterías).</li>
+                                    <li>Datasheet de inversor en formato pdf(en caso de contener más de un modelo, especificar modelo utilizado en la instalación.)</li>
+                                    <li>Datasheet de panel solar en formato pdf.</li>
+                                </ol>
+                            </li>
+                        </ol>
+
                         <iframe src="../assets/diagrams/diagramas_procesos/Habilitación municipal.drawio.html"
                             class="diagram-frame"></iframe>
                     </section>
@@ -535,41 +567,27 @@
                 <!-- Sección: Flujo de Actividades -->
                 <section id="actividades" class="content-section">
                     <h2>7. Flujo de Actividades</h2>
-                    <p>El diagrama de flujo de actividades expone el detalle interno de los procesos, la distribución de
-                        roles organizacionales y la interacción entre áreas. Cada proceso se analiza como una estructura
-                        compuesta por actividades que producen objetos de negocio específicos dentro del sistema
-                        organizacional orientado a la generación de una propuesta técnica y económicamente viable.</p>
+
+                    <p>El diagrama de flujo de actividades expone el detalle interno de los procesos, la distribución de roles organizacionales y la interacción entre áreas. Cada proceso se analiza como una estructura compuesta por actividades que producen objetos de negocio específicos dentro del sistema organizacional orientado a la generación de una propuesta técnica y económicamente viable.</p>
 
                     <iframe src="../assets/diagrams/flujo_de_actividades.drawio.html" class="diagram-frame"></iframe>
                     <div class="section-description">
                         <h3>7.1 Notación utilizada</h3>
+
                         <p>Se emplea la notación UML 2.5 para diagramas de actividades.</p>
+
                         <ul>
                             <li><strong>Flechas: </strong>Muestran la dirección del flujo.</li>
-                            <li><strong>Actividad simple: </strong>Las actividades simples se representan mediante nodos
-                                con bordes redondeados.</li>
-                            <li><strong>Objetos: </strong>Los objetos resultantes se representan mediante rectángulos
-                                con fondo amarillo con una cabecera que indican el tipo de objeto al que pertenecen.
-                            </li>
-                            <li><strong>Actividades estructuradas: </strong>representan procesos compuestos, se
-                                identifican con el encabezado "structured", con bordes redondeados y líneas
-                                discontinuas.</li>
-                            <li><strong>Eventos: </strong>Se encuentran reprensentados con un restángula con forma de
-                                media flecha, con líneas azules. Significan eventos que disparan procesos o actividades.
-                            </li>
-                            <li><strong>Swinlines: </strong>Representan distintas áreas, roles, actores y responsables
-                                de las actividades.</li>
-                            <li><strong>Nodo de inicio: </strong>Es un círculo simple. Es el lugar dónde se inicia el
-                                flujo de actividad.</li>
-                            <li><strong>Nodo de decisión: </strong>Es un rombo y representa un lugar dónde el flujo se
-                                divide y toma distintos caminos según la decisión que se tome en el recorrido del flujo.
-                            </li>
-                            <li><strong>Nodo de confluencia: </strong>Es un rombo y representa un lugar dónde los flujos
-                                confluyen (sin paralelizarse)</li>
-                            <li><strong>Join: </strong>Líneas paralelas que representan lugares dónde el flujo se abre
-                                en distintos flujos o actividades paralelas.</li>
-                            <li><strong>Fork: </strong>Líneas paralelas similares al join, que representan lugares dónde
-                                dos o más flujos se unen.</li>
+                            <li><strong>Actividad simple: </strong>Las actividades simples se representan mediante nodos con bordes redondeados.</li>
+                            <li><strong>Objetos: </strong>Los objetos resultantes se representan mediante rectángulos con fondo amarillo con una cabecera que indican el tipo de objeto al que pertenecen.</li>
+                            <li><strong>Actividades estructuradas: </strong>representan procesos compuestos, se identifican con el encabezado "structured", con bordes redondeados y líneas discontinuas.</li>
+                            <li><strong>Eventos: </strong>Se encuentran reprensentados con un restángula con forma de media flecha, con líneas azules. Significan eventos que disparan procesos o actividades.</li>
+                            <li><strong>Swinlines: </strong>Representan distintas áreas, roles, actores y responsables de las actividades.</li>
+                            <li><strong>Nodo de inicio: </strong>Es un círculo simple. Es el lugar dónde se inicia el flujo de actividad.</li>
+                            <li><strong>Nodo de decisión: </strong>Es un rombo y representa un lugar dónde el flujo se divide y toma distintos caminos según la decisión que se tome en el recorrido del flujo.</li>
+                            <li><strong>Nodo de confluencia: </strong>Es un rombo y representa un lugar dónde los flujos confluyen (sin paralelizarse)</li>
+                            <li><strong>Join: </strong>Líneas paralelas que representan lugares dónde el flujo se abre en distintos flujos o actividades paralelas.</li>
+                            <li><strong>Fork: </strong>Líneas paralelas similares al join, que representan lugares dónde dos o más flujos se unen.</li>
                             <li><strong>Nodo final: </strong>Representa el final del flujo de actividades.</li>
                         </ul>
                     </div>
