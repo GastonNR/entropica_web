@@ -641,28 +641,64 @@
                         </section>
                         <section class="content-section">
 
-                            <h3>7.2.3 Definición del objetivo enregético</h3>
+                            <h3>7.2.3 Definición del objetivo energético</h3>
 
-                            <p>Una vez obtenido el análisis del recurso solar, y la disponibilidad del terreno para los paneles, podemos estimar el objetivo energético, definir el nivel de cobertura, si es solo para autoconsumo o puede inyectarse a red. Por esto podemos definir el las horas y días de respaldo, </p>
+                            <p>Una vez obtenido el análisis del recurso solar, y la disponibilidad del terreno para los paneles, podemos estimar el objetivo energético, definir el nivel de cobertura, si es solo para autoconsumo o puede inyectarse a red. Por esto podemos definir el las horas y días de respaldo.</p>
 
                             <iframe
                                 src="../assets/diagrams/diagramas_actividades/Actividades - definición del objetivo energético.drawio.html"
                                 class="diagram-frame"></iframe>
                         </section>
                         <section class="content-section">
+                            
                             <h3>7.2.4 Cálculo de generación fotovoltaica</h3>
-                            <h4>Potencia instalada:</h4>
-                            <p>Potencia nominal total del generador fotovoltaico, calculada como la suma de la potencia de los módulos seleccionados. Se utiliza como base para la estimación de generación energética y la selección del equipamiento del sistema.</p>
+
+                            <p>Una vez definido el perfil solar del sitio, su disponibilidad para paneles, transformamos la energía objetivo en un consumo objetivo diario útil. Ajustamos el sistema a los factores de pérdidas de rendimiento del sistema. Calculamos la irradiación solar mensual usando la HSP, y con eso calculamos la potencia solar requerida.</p>
+
+                            <p>Para terminar de definir la producción solar, utilizamos un panel de referencia, su potencia nominal, para calcular la cantidad de paneles y así llegar a la potencia instalada.</p>
+
+                            <div class="info-card">
+                                <h4>Potencia instalada:</h4>
+                                <p>Potencia nominal total del generador fotovoltaico, calculada como la suma de la potencia de los módulos seleccionados. Se utiliza como base para la estimación de generación energética y la selección del equipamiento del sistema.</p>
+                            </div>
+
+                            <p>Por último, estimamos la generación energética con la potencia instalada y el factor de pérdida, y comparamos con la demanda para validar los resultados. Si el proyecto no es viable o no se ajusta a la demanda, volvemos a repetir el proceso reajustando los valores, tipo de panel, cantidad, etc. Si es viable, se genera una documentación técnica para informar los resultados.</p>
+
                             <iframe src="../assets/diagrams/diagramas_actividades/Actividades - Cálculo de generación fotovoltaica.drawio.html" class="diagram-frame"></iframe>
                         </section>
                         <section class="content-section">
+
                             <h3>7.2.5 Dimensionamiento del almacenamiento</h3>
-                            <p></p>
+
+                            <p>Si el sistema planificado requiere almacenamiento, ya sea por tratarse de un sistema off-grid o uno híbrido, debemos dimensionar el almacenamiento. Primero determinamos la energía a respaldar, por lo general se trata del consumo nocturno o consumo crítico en caso de que el sistema quede sin energía de red. Una vez definido el consumo podemos aplicar los días de autonomía necesarios, esto es, cuantos días el sistema puede operar sin generación solar.</p>
+
+                            <p>Luego se corrige la capacidad requerida según los límites operativos de la batería. Esto es un ajuste por profundidad de descarga.</p>
+
+                            <p>Finalmente, transformamos la energía (kWh) en capacidad eléctrica (Ah) para poder dimensionar fisicamente el banco de baterías y definir su tecnología (gel, Ion-lítio, ácido). Verificamos la coherencia con el sistema fotovoltaico para validar la selección.</p>
+
                             <iframe src="../assets/diagrams/diagramas_actividades/Actividades - Dimensionamiento preliminar del almacenamiento.drawio.html" class="diagram-frame"></iframe>
                         </section>
                         <section class="content-section">
+
                             <h3>7.2.6 Selección de la configuración del sistema</h3>
-                            <p></p>
+
+                            <p>En este proceso se configura el sistema para obtener variables físicas con las cuales el sistema pueda funcionar:</p>
+
+                            <ol>
+                                <li><strong>Selección de la arquitectura del sistema: </strong>diseño de inversores distribuido, centralizado, conexión a red, punto de inyección, o un simple inversor.</li>
+                                <li><strong>Definición de la tensión del sistema: </strong>Definimos el voltaje que menejará la instalación en continua y la relación CC/DC.</li>
+                                <li><strong>Selección del inversor: </strong>Según la tensión a manejar y la relación CC/DC.</li>
+                                <li><strong>Definir el número de paneles en serie: </strong>Según el panel seleccionado y la tensión nominal y tensión máxima manejada por los paneles seleccionados.</li>
+                                <li><strong>Definir el número de strings en paralelo: </strong>Según la cantidad máxima de tensión e intensidad de corriente soportada por cada MPPT de los inversores a utilizar.</li>
+                                <li><strong>Verificación eléctrica: </strong>Corroborar que la configuración de los strings junto con los inversores, no suponga un riesgo. Si los valores de tensión e intesidad eléctrica exceden el manejo del inversor o los paneles, se debe cambiar el panel o el inversor.</li>
+                                <li><strong>Seleccionar el controlador de carga: </strong>Si el sistema tiene baterías, seleccionamos el controlador de carga adecuado al banco de baterías proyectado.</li>
+                                <li><strong>Configuración del banco de baterías: </strong>Se elige especificamente el modelo de batería a utilizar.</li>
+                                <li><strong>Cálculo de protecciones eléctricas: </strong>Se calcula las protecciones térmicas, fusibles, atmosfericas, tanto para CC como para DC.</li>
+                                <li><strong>Definición del esquema eléctrico del sistema: </strong>Se realizan planos o diagramas de conexiones si es necesario.</li>
+                                <li><strong>Validadación normativa o de seguridad: </strong>Corroboramos que todo el sistema se encuentre dentro de las normas de seguridad y el código de construción e instalaciones eléctricas municipales.</li>
+                                <li><strong>Redacción de la documentación: </strong>Se documenta toda la configuración técnica inicial para después hacerle la oferta económica al cliente.</li>
+                            </ol>
+
                             <iframe src="../assets/diagrams/diagramas_actividades/Actividades - Selección de la configuración del sistema.drawio.html" class="diagram-frame"></iframe>
                         </section>
                     </section>
