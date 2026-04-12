@@ -592,28 +592,59 @@
                         </ul>
                     </div>
                     <section class="content-section">
+
                         <h3>7.2 Diagramas de actividades técnicas.</h3>
-                        <p>A continuación se exponen los diagramas de actividades (de caja blanca), de los procesos
-                            técnicos, esto es, el proceso de dimensionamiento energético (C) de la cadena de valor junto
-                            con sus subprocesos</p>
+
+                        <p>A continuación se exponen los diagramas de actividades (de caja blanca), de los procesos técnicos, esto es, el proceso de dimensionamiento energético (C) de la cadena de valor junto con sus subprocesos</p>
+
                         <p>Los demás procesos de negocio serán ampliados en ediciones posteriores.</p>
+
                         <section class="content-section">
+
                             <h3>7.2.1 Dimensionamiento energético</h3>
-                            <p></p>
+
+                            <p>El siguiente diagrama de actividades representa el proceso "C" de dimensionamiento energético de modo general. Dentro de este pueden apreciarse los demás subprocesos representados al modo de actividades o esturcturas compuestas.</p>
+                            
                             <iframe
                                 src="../assets/diagrams/diagramas_actividades/Actividades-dimensionamiento enregético.drawio.html"
-                                class="diagram-frame"></iframe>
+                                class="diagram-frame"
+                            ></iframe>
+                            
                         </section>
                         <section class="content-section">
+
                             <h3>7.2.2 Análisis del recurso solar</h3>
-                            <p></p>
+
+                            <p>En este subproceso, se obtienen los datos del recurso solar del emplazamiento por medio de su ubicación geográfica. Gracias a la dirección proporcionada, se obtiene la latitud y longitud de la zona y, a partir de un sitio web o software aplicado, se obtienen los datos de radiación del emplazamiento.</p>
+
+                            <p>Los datos de radiación sumistrados son los siguientes:</p>
+
+                            <ul>
+                                <li><strong>DNI: </strong>Direct normal irradiation (radiación normal directa)</li>
+                                <li><strong>GHI: </strong>Global horizontal irradiation (radiación horizontal global).</li>
+                                <li><strong>GTI opta: </strong>Global tilted irradiation at optimun angle (radiación global inclinada.) </li>
+                                <li><strong>OPTA: </strong>Optimun tilt of PV modules (inclinación óptima de los módulos fotovoltaicos.)</li>
+                                <li><strong>TEMP</strong>Temperatura del aire.</li>
+                                <li><strong>ELE</strong>Elevación del terreno.</li>
+                            </ul>
+
                             <iframe
-                                src="../assets/diagrams/diagramas_actividades/Actividades - Análisis del recurso solar.drawio.html"
-                                class="diagram-frame"></iframe>
+                            src="../assets/diagrams/diagramas_actividades/Actividades - Análisis del recurso solar.drawio.html"
+                            class="diagram-frame"></iframe>
+
+                            <p>Por medio de estos datos podemos obtener el valor de HSP (hora solar pico) para el emplazamiento, analizar la variabilidad temporal y evaluar la orientación óptima.</p>
+
+                            <p>Si se utiliza algún tipo de software de diseño de plantas para analizar el emplazamiento, que cuente con imágenes satelitales del lugar, es posible que pueda realizarse un análisis de sombras y hacer una evaluación de la superficie disponible para la colocación de los paneles y estimar las pérdidas por el recurso solar.</p>
+
+                            <p>En el primer análisis del emplazamiento, ya sabemos si el lugar es apto o no. Podemos plantear su viabilidad, solo con saber si la superficie admite la cantidad de paneles necesarios para alcanzar más o menos la potencia estimada. Si esto no es así, se debe buscar otra localición para la instalación.</p>
+
                         </section>
                         <section class="content-section">
+
                             <h3>7.2.3 Definición del objetivo enregético</h3>
-                            <p></p>
+
+                            <p>Una vez obtenido el análisis del recurso solar, y la disponibilidad del terreno para los paneles, podemos estimar el objetivo energético, definir el nivel de cobertura, si es solo para autoconsumo o puede inyectarse a red. Por esto podemos definir el las horas y días de respaldo, </p>
+
                             <iframe
                                 src="../assets/diagrams/diagramas_actividades/Actividades - definición del objetivo energético.drawio.html"
                                 class="diagram-frame"></iframe>
