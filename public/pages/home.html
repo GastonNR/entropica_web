@@ -371,7 +371,7 @@
 
                         <h3>6.3. Dimensionamiento energético C</h3>
 
-                        <p>Procesos técnico principal que abarca varios subprocesos. Su objetivo es dimensionar losm equipos, la instalación, y la potencia necesaria para poder satisfacer la demanda del proyecto,</p>
+                        <p>Proceso técnico principal que abarca varios subprocesos. Su objetivo es dimensionar los equipos, la instalación y la potencia necesaria para satisfacer la demanda del proyecto. El proceso comienza clasificando el tipo de sistema (on-grid, off-grid o híbrido), decisión que condiciona el resto del dimensionamiento.</p>
 
                         <iframe src="../assets/diagrams/diagramas_procesos/Dimensionamiento energético.drawio.html" class="diagram-frame"></iframe>
 
@@ -403,7 +403,7 @@
                             <section id="descripcion-procesos-C.2.1" class="content-section">
                                 <h3>6.3.2.1 Definición del objetivo energético C.2.1</h3>
 
-                                <p>Las necesidades de los clientes pueden variar. Desde una instalación domiciliaria, donde propietario solo quiera reducir el precio de la factura eléctrica, una cabaña sin conexión y que por lo tanto no cuenta con energía, una finca sin conexión a red que necesita bombear agua de pozo para funcionar, una industria que necesita un back up para no quedarse sin electricidad en un apagón y perder producción, etc. Las motiviaciones para colocar una planta de paneles solares pueden ser muy distintas, y por lo tanto, para llegar a satisfacer la demanda, hay que estipular una potencia objetivo, que le permita al sistema cumplir de manera óptima la finalidad para la cuál fue instalado.</p>
+                                <p>Las necesidades de los clientes pueden variar: desde una instalación domiciliaria, donde el propietario solo quiere reducir el precio de la factura eléctrica; una cabaña sin conexión que no cuenta con energía; una finca aislada que necesita bombear agua de pozo para funcionar; una industria que requiere un respaldo para no quedarse sin electricidad en un apagón y perder producción; etc. Las motivaciones para instalar una planta de paneles solares pueden ser muy distintas, por lo que el punto de partida es analizar el perfil o curva de carga del cliente (consumo horario en sistemas off-grid, o consumo mensual de factura en sistemas on-grid) para estipular una potencia objetivo que permita al sistema cumplir de manera óptima la finalidad para la que fue instalado. La demanda del cliente y el recurso solar disponible se consideran entradas en paralelo: la demanda fija el objetivo y el recurso solar acota la potencia máxima instalable.</p>
 
                                 <iframe src="../assets/diagrams/diagramas_procesos/C.2.1.drawio.html"
                                     class="diagram-frame"></iframe>
@@ -412,7 +412,7 @@
 
                                 <h3>6.3.2.2 Cálculo de generación fotovoltaica C.2.2</h3>
 
-                                <p>Una vez definido el objetivo, se calcula la cantidad de paneles necesarios, según la potencia que pueden producir los mismos, y el recurso solar disponible en el emplazamiento. En esta etapa se puede definir la potencia anual estimada, el deficit y el suparvit de la producción.</p>
+                                <p>Una vez definido el objetivo, se calcula la cantidad de paneles necesarios, según la potencia que pueden producir los mismos, y el recurso solar disponible en el emplazamiento. En esta etapa se puede definir la potencia anual estimada, el déficit y el superávit de la producción.</p>
 
                                 <p>Dependiendo del tamaño de la instalación, puede usarse una planilla de Excel para realizar el cálculo, o si el proyecto es grande y requiere estimaciones más precisas, se utiliza un software de diseño de plantas. Por ejemplo: PVSyst, Helioscope, etc.</p>
 
@@ -422,7 +422,7 @@
 
                                 <h3>6.3.2.3 Dimensionamiento preliminar del almacenamiento C.2.3</h3>
 
-                                <p>Esta etapa solo se lleva a cabo si el sistema se ha pensado como un off-grid o un híbrido. En este subproceso se calcula el almacenamiento que el sistema requiere para funcionar correctamente: tipo de baterías, Ion-lítio, gel o ácido; capacidad de almacenamiento según la potencia requerida, ciclos de carga según horas solares, etc.</p>
+                                <p>Esta etapa solo se lleva a cabo si el sistema se ha pensado como off-grid o híbrido. En este subproceso se calcula el almacenamiento que el sistema requiere para funcionar correctamente: tipo de baterías (ion-litio, gel o ácido), tensión del banco, capacidad de almacenamiento y verificación del C-rate (corriente máxima de carga y descarga admisible). El criterio de dimensionado depende del tipo de sistema: en off-grid se aplican días de autonomía, mientras que en híbrido el banco se dimensiona por optimización de autoconsumo o peak shaving.</p>
 
                                 <iframe src="../assets/diagrams/diagramas_procesos/C.2.3.drawio.html"
                                     class="diagram-frame"></iframe>
@@ -430,7 +430,7 @@
                         </section>
                         <section id="descripcion-procesos-C.3" class="content-section">
 
-                            <h3>6.3.3 Selección de la configuración del sistema</h3>
+                            <h3>6.3.3 Selección de la configuración del sistema C.3</h3>
 
                             <p>En este subproceso se lleva el análisis previo a magnitudes concretas. En instalaciones menores, es probable que los pasos anteriores sean suficientes para determinar los materiales fotovoltaicos, paneles e inversores necesarios. Pero si el proyecto es grande, se necesita analizar otros factores como la topología del sistema (inversores distribuidos o centralizados), la conexión a red (conexión con medidores, medidor comunitario, punto de inyección, necesidad de un nuevo tranformador, conexión a red de media tensión, etc.).</p>
 
@@ -442,7 +442,7 @@
                         </section>
                         <section id="descripcion-procesos-C.4" class="content-section">
 
-                            <h3>6.3.4 Simulación, validación y ajuste</h3>
+                            <h3>6.3.4 Simulación, validación y ajuste C.4</h3>
 
                             <p>Una vez dimensionado el proyecto, si es necesario, podemos validar todas las variables por medio de una simulación para corroborar si el sistema diseñado, se ajusta o cumple con los requerimientos propuestos en el objetivo energético.</p>
 
@@ -611,7 +611,7 @@
 
                             <h3>7.2.1 Dimensionamiento energético</h3>
 
-                            <p>El siguiente diagrama de actividades representa el proceso "C" de dimensionamiento energético de modo general. Dentro de este pueden apreciarse los demás subprocesos representados al modo de actividades o esturcturas compuestas.</p>
+                            <p>El siguiente diagrama de actividades representa el proceso de dimensionamiento energético de modo general. Dentro de él pueden apreciarse los demás subprocesos representados como actividades o estructuras compuestas. El flujo comienza clasificando el tipo de sistema (on-grid, off-grid o híbrido), decisión que gobierna los subprocesos siguientes, e incorpora los lazos de reajuste entre el cálculo de generación y la selección de la configuración, y entre la simulación y el objetivo energético.</p>
                             
                             <iframe
                                 src="../assets/diagrams/diagramas_actividades/Actividades-dimensionamiento enregético.drawio.html"
@@ -632,8 +632,8 @@
                                 <li><strong>GHI: </strong>Global horizontal irradiation (radiación horizontal global).</li>
                                 <li><strong>GTI opta: </strong>Global tilted irradiation at optimun angle (radiación global inclinada.) </li>
                                 <li><strong>OPTA: </strong>Optimun tilt of PV modules (inclinación óptima de los módulos fotovoltaicos.)</li>
-                                <li><strong>TEMP</strong>Temperatura del aire.</li>
-                                <li><strong>ELE</strong>Elevación del terreno.</li>
+                                <li><strong>TEMP: </strong>Temperatura del aire.</li>
+                                <li><strong>ELE: </strong>Elevación del terreno.</li>
                             </ul>
 
                             <iframe
@@ -642,7 +642,7 @@
 
                             <p>Por medio de estos datos podemos obtener el valor de HSP (hora solar pico) para el emplazamiento, analizar la variabilidad temporal y evaluar la orientación óptima.</p>
 
-                            <p>Si se utiliza algún tipo de software de diseño de plantas para analizar el emplazamiento, que cuente con imágenes satelitales del lugar, es posible que pueda realizarse un análisis de sombras y hacer una evaluación de la superficie disponible para la colocación de los paneles y estimar las pérdidas por el recurso solar.</p>
+                            <p>Si se utiliza un software de diseño de plantas que cuente con imágenes satelitales del lugar, es posible realizar un análisis de sombras, evaluar la superficie disponible para la colocación de los paneles y estimar las pérdidas del recurso solar. En instalaciones sobre suelo, el análisis de sombras incluye además la separación entre filas, el factor de ocupación del terreno (GCR) y el sombreado mutuo entre hileras de paneles.</p>
 
                             <p>En el primer análisis del emplazamiento, ya sabemos si el lugar es apto o no. Podemos plantear su viabilidad, solo con saber si la superficie admite la cantidad de paneles necesarios para alcanzar más o menos la potencia estimada. Si esto no es así, se debe buscar otra localición para la instalación.</p>
 
@@ -651,7 +651,7 @@
 
                             <h3>7.2.3 Definición del objetivo energético</h3>
 
-                            <p>Una vez obtenido el análisis del recurso solar, y la disponibilidad del terreno para los paneles, podemos estimar el objetivo energético, definir el nivel de cobertura, si es solo para autoconsumo o puede inyectarse a red. Por esto podemos definir el las horas y días de respaldo.</p>
+                            <p>El punto de partida de este subproceso es analizar el perfil o curva de carga del cliente: el consumo horario en sistemas off-grid, o el consumo mensual de la factura en sistemas on-grid. A partir de ese perfil se estima el objetivo energético, se define el nivel de cobertura (autoconsumo o inyección a red) y la autonomía requerida (horas o días de respaldo). La demanda del cliente y el recurso solar disponible se consideran entradas en paralelo: la demanda fija el objetivo y el recurso solar lo valida y acota. Si el objetivo no resulta viable frente al recurso solar disponible, se reajusta antes de continuar.</p>
 
                             <iframe
                                 src="../assets/diagrams/diagramas_actividades/Actividades - definición del objetivo energético.drawio.html"
@@ -670,7 +670,7 @@
                                 <p>Potencia nominal total del generador fotovoltaico, calculada como la suma de la potencia de los módulos seleccionados. Se utiliza como base para la estimación de generación energética y la selección del equipamiento del sistema.</p>
                             </div>
 
-                            <p>Por último, estimamos la generación energética con la potencia instalada y el factor de pérdida, y comparamos con la demanda para validar los resultados. Si el proyecto no es viable o no se ajusta a la demanda, volvemos a repetir el proceso reajustando los valores, tipo de panel, cantidad, etc. Si es viable, se genera una documentación técnica para informar los resultados.</p>
+                            <p>Por último, estimamos la generación energética con la potencia instalada y el factor de pérdidas, y la comparamos con la demanda para validar los resultados. Si el proyecto no es viable o no se ajusta a la demanda, repetimos el proceso reajustando los valores (tipo de panel, cantidad, etc.). Si es viable, se genera la documentación técnica con los resultados. La cantidad de paneles calculada en esta etapa es preliminar: durante la selección de la configuración del sistema puede ajustarse al redondear los strings a un número entero dentro de la ventana MPPT, en cuyo caso se vuelve a este subproceso para recalcular la generación con el número de paneles efectivo (reajuste por configuración).</p>
 
                             <iframe src="../assets/diagrams/diagramas_actividades/Actividades - Cálculo de generación fotovoltaica.drawio.html" class="diagram-frame"></iframe>
                         </section>
@@ -678,11 +678,11 @@
 
                             <h3>7.2.5 Dimensionamiento del almacenamiento</h3>
 
-                            <p>Si el sistema planificado requiere almacenamiento, ya sea por tratarse de un sistema off-grid o uno híbrido, debemos dimensionar el almacenamiento. Primero determinamos la energía a respaldar, por lo general se trata del consumo nocturno o consumo crítico en caso de que el sistema quede sin energía de red. Una vez definido el consumo podemos aplicar los días de autonomía necesarios, esto es, cuantos días el sistema puede operar sin generación solar.</p>
+                            <p>Si el sistema planificado requiere almacenamiento, ya sea por tratarse de un sistema off-grid o híbrido, debemos dimensionar el banco de baterías. Primero determinamos la energía a respaldar, que por lo general es el consumo nocturno o el consumo crítico cuando el sistema queda sin energía de red. A partir de ahí, el criterio de dimensionado depende del tipo de sistema: en off-grid aplicamos los días de autonomía (cuántos días puede operar el sistema sin generación solar), mientras que en híbrido el banco se dimensiona por optimización de autoconsumo o peak shaving.</p>
 
                             <p>Luego se corrige la capacidad requerida según los límites operativos de la batería. Esto es un ajuste por profundidad de descarga.</p>
 
-                            <p>Finalmente, transformamos la energía (kWh) en capacidad eléctrica (Ah) para poder dimensionar fisicamente el banco de baterías y definir su tecnología (gel, Ion-lítio, ácido). Verificamos la coherencia con el sistema fotovoltaico para validar la selección.</p>
+                            <p>Finalmente, definimos la tensión del banco (12, 24, 48 V, etc.) y, con ella, transformamos la energía (kWh) en capacidad eléctrica (Ah) para dimensionar físicamente el banco de baterías y definir su tecnología (gel, ion-litio, ácido). Verificamos la coherencia con el sistema fotovoltaico —incluyendo la tensión de banco y el C-rate, es decir, la corriente máxima de carga y descarga admisible— para validar la selección.</p>
 
                             <iframe src="../assets/diagrams/diagramas_actividades/Actividades - Dimensionamiento preliminar del almacenamiento.drawio.html" class="diagram-frame"></iframe>
                         </section>
@@ -694,17 +694,18 @@
 
                             <ol type="a">
                                 <li><strong>Selección de la arquitectura del sistema: </strong>diseño de inversores distribuido, centralizado, conexión a red, punto de inyección, o un simple inversor.</li>
-                                <li><strong>Definición de la tensión del sistema: </strong>Definimos el voltaje que menejará la instalación en continua y la relación CC/DC.</li>
-                                <li><strong>Selección del inversor: </strong>Según la tensión a manejar y la relación CC/DC.</li>
-                                <li><strong>Definir el número de paneles en serie: </strong>Según el panel seleccionado y la tensión nominal y tensión máxima manejada por los paneles seleccionados.</li>
-                                <li><strong>Definir el número de strings en paralelo: </strong>Según la cantidad máxima de tensión e intensidad de corriente soportada por cada MPPT de los inversores a utilizar.</li>
-                                <li><strong>Verificación eléctrica: </strong>Corroborar que la configuración de los strings junto con los inversores, no suponga un riesgo. Si los valores de tensión e intesidad eléctrica exceden el manejo del inversor o los paneles, se debe cambiar el panel o el inversor.</li>
+                                <li><strong>Definición de la tensión del sistema: </strong>Definimos el voltaje que manejará la instalación en continua y la relación CC/CA (continua/alterna, DC/AC).</li>
+                                <li><strong>Selección del inversor: </strong>Según la tensión a manejar y la relación CC/CA (DC/AC).</li>
+                                <li><strong>Definir el número de paneles en serie: </strong>según el panel seleccionado y la tensión del string, verificando que la tensión de circuito abierto (Voc) a la temperatura mínima no supere la tensión máxima de entrada en continua (Vmáx DC) del inversor.</li>
+                                <li><strong>Definir el número de strings en paralelo: </strong>según los límites de corriente soportados por cada MPPT de los inversores a utilizar.</li>
+                                <li><strong>Verificación eléctrica: </strong>corroborar que la configuración de strings e inversores no suponga un riesgo, verificando además que la tensión en el punto de máxima potencia (Vmp) a la temperatura máxima se mantenga dentro de la ventana MPPT del inversor. Si los valores de tensión o corriente exceden el manejo del inversor o de los paneles, se debe cambiar el panel o el inversor.</li>
                                 <li><strong>Seleccionar el controlador de carga: </strong>Si el sistema tiene baterías, seleccionamos el controlador de carga adecuado al banco de baterías proyectado.</li>
                                 <li><strong>Configuración del banco de baterías: </strong>Se elige especificamente el modelo de batería a utilizar.</li>
-                                <li><strong>Cálculo de protecciones eléctricas: </strong>Se calcula las protecciones térmicas, fusibles, atmosfericas, tanto para CC como para DC.</li>
+                                <li><strong>Dimensionamiento de conductores: </strong>se calcula la sección de los conductores de cada tramo (CC y CA) según la capacidad de corriente, verificando que la caída de tensión se mantenga dentro del límite admisible [VERIFICAR con normativa vigente].</li>
+                                <li><strong>Cálculo de protecciones eléctricas: </strong>se calculan las protecciones térmicas, fusibles y atmosféricas, tanto para corriente continua (CC) como para corriente alterna (CA).</li>
                                 <li><strong>Definición del esquema eléctrico del sistema: </strong>Se realizan planos o diagramas de conexiones si es necesario.</li>
-                                <li><strong>Validadación normativa o de seguridad: </strong>Corroboramos que todo el sistema se encuentre dentro de las normas de seguridad y el código de construción e instalaciones eléctricas municipales.</li>
-                                <li><strong>Redacción de la documentación: </strong>Se documenta toda la configuración técnica inicial para después hacerle la oferta económica al cliente.</li>
+                                <li><strong>Validación normativa y de seguridad: </strong>corroboramos que todo el sistema cumpla las normas de seguridad y el código de construcción e instalaciones eléctricas municipales.</li>
+                                <li><strong>Redacción de la documentación: </strong>se documenta toda la configuración técnica (equipos seleccionados, esquema eléctrico, número de paneles efectivo, sección de conductores y caída de tensión verificada) para luego elaborar la oferta económica al cliente.</li>
                             </ol>
 
                             <iframe src="../assets/diagrams/diagramas_actividades/Actividades - Selección de la configuración del sistema.drawio.html" class="diagram-frame"></iframe>
